@@ -14464,6 +14464,10 @@ a.anchor-link {
   display: none;
 }
 
+.highlight  {
+  margin: 0.4em;
+}
+
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14473,26 +14477,9 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+.CodeMirror pre {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
-}
-
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
-  font-size: var(--jp-code-font-size);
+  padding: 0;
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14592,8 +14579,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1>Test Script Description<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Quick-Tests:" data-toc-modified-id="Quick-Tests:-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Quick Tests:</a></span><ul class="toc-item"><li><span><a href="#STARTUP-TEST" data-toc-modified-id="STARTUP-TEST-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>STARTUP TEST</a></span><ul class="toc-item"><li><span><a href="#test_smoking_2_1" data-toc-modified-id="test_smoking_2_1-1.1.1"><span class="toc-item-num">1.1.1&nbsp;&nbsp;</span>test_smoking_2_1</a></span></li><li><span><a href="#test_smoking_2_2" data-toc-modified-id="test_smoking_2_2-1.1.2"><span class="toc-item-num">1.1.2&nbsp;&nbsp;</span>test_smoking_2_2</a></span></li><li><span><a href="#test_smoking_2_3" data-toc-modified-id="test_smoking_2_3-1.1.3"><span class="toc-item-num">1.1.3&nbsp;&nbsp;</span>test_smoking_2_3</a></span></li><li><span><a href="#test_smoking_2_4" data-toc-modified-id="test_smoking_2_4-1.1.4"><span class="toc-item-num">1.1.4&nbsp;&nbsp;</span>test_smoking_2_4</a></span></li><li><span><a href="#test_smoking_2_5" data-toc-modified-id="test_smoking_2_5-1.1.5"><span class="toc-item-num">1.1.5&nbsp;&nbsp;</span>test_smoking_2_5</a></span></li><li><span><a href="#test_smoking_2_8" data-toc-modified-id="test_smoking_2_8-1.1.6"><span class="toc-item-num">1.1.6&nbsp;&nbsp;</span>test_smoking_2_8</a></span></li><li><span><a href="#test_machine_restart" data-toc-modified-id="test_machine_restart-1.1.7"><span class="toc-item-num">1.1.7&nbsp;&nbsp;</span>test_machine_restart</a></span></li></ul></li><li><span><a href="#BASIC-PROTOCOL-TESTS" data-toc-modified-id="BASIC-PROTOCOL-TESTS-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>BASIC PROTOCOL TESTS</a></span><ul class="toc-item"><li><span><a href="#test_smoking_2_7" data-toc-modified-id="test_smoking_2_7-1.2.1"><span class="toc-item-num">1.2.1&nbsp;&nbsp;</span>test_smoking_2_7</a></span></li><li><span><a href="#test_smoking_2_10" data-toc-modified-id="test_smoking_2_10-1.2.2"><span class="toc-item-num">1.2.2&nbsp;&nbsp;</span>test_smoking_2_10</a></span></li><li><span><a href="#test_smoking_2_11" data-toc-modified-id="test_smoking_2_11-1.2.3"><span class="toc-item-num">1.2.3&nbsp;&nbsp;</span>test_smoking_2_11</a></span></li><li><span><a href="#test_smoking_2_12_1" data-toc-modified-id="test_smoking_2_12_1-1.2.4"><span class="toc-item-num">1.2.4&nbsp;&nbsp;</span>test_smoking_2_12_1</a></span></li><li><span><a href="#test_smoking_2_12_2" data-toc-modified-id="test_smoking_2_12_2-1.2.5"><span class="toc-item-num">1.2.5&nbsp;&nbsp;</span>test_smoking_2_12_2</a></span></li><li><span><a href="#test_smoking_2_12_2_3" data-toc-modified-id="test_smoking_2_12_2_3-1.2.6"><span class="toc-item-num">1.2.6&nbsp;&nbsp;</span>test_smoking_2_12_2_3</a></span></li><li><span><a href="#test_smoking_2_12_3" data-toc-modified-id="test_smoking_2_12_3-1.2.7"><span class="toc-item-num">1.2.7&nbsp;&nbsp;</span>test_smoking_2_12_3</a></span></li><li><span><a href="#test_smoking_2_13" data-toc-modified-id="test_smoking_2_13-1.2.8"><span class="toc-item-num">1.2.8&nbsp;&nbsp;</span>test_smoking_2_13</a></span></li><li><span><a href="#test_smoking_2_14" data-toc-modified-id="test_smoking_2_14-1.2.9"><span class="toc-item-num">1.2.9&nbsp;&nbsp;</span>test_smoking_2_14</a></span></li></ul></li></ul></li><li><span><a href="#IPv4-Feature-Tests" data-toc-modified-id="IPv4-Feature-Tests-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>IPv4 Feature Tests</a></span><ul class="toc-item"><li><span><a href="#test_ipv4_from_down_status" data-toc-modified-id="test_ipv4_from_down_status-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>test_ipv4_from_down_status</a></span></li><li><span><a href="#test_ipv4_from_up_status" data-toc-modified-id="test_ipv4_from_up_status-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>test_ipv4_from_up_status</a></span></li><li><span><a href="#test_ipv4_l3_msg" data-toc-modified-id="test_ipv4_l3_msg-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>test_ipv4_l3_msg</a></span></li><li><span><a href="#test_ipv4_with_multiple_address_mask" data-toc-modified-id="test_ipv4_with_multiple_address_mask-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>test_ipv4_with_multiple_address_mask</a></span></li><li><span><a href="#test_ipv4_with_second_ip" data-toc-modified-id="test_ipv4_with_second_ip-2.5"><span class="toc-item-num">2.5&nbsp;&nbsp;</span>test_ipv4_with_second_ip</a></span></li></ul></li><li><span><a href="#IPv6-Feature-Tests:" data-toc-modified-id="IPv6-Feature-Tests:-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>IPv6 Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#test_ipv6_6_1" data-toc-modified-id="test_ipv6_6_1-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>test_ipv6_6_1</a></span></li><li><span><a href="#test_ipv6_8_1" data-toc-modified-id="test_ipv6_8_1-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>test_ipv6_8_1</a></span></li><li><span><a href="#test_ipv6_8_2" data-toc-modified-id="test_ipv6_8_2-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>test_ipv6_8_2</a></span></li><li><span><a href="#test_ipv6_aggregation_port" data-toc-modified-id="test_ipv6_aggregation_port-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>test_ipv6_aggregation_port</a></span></li><li><span><a href="#test_ipv6_from_down_status" data-toc-modified-id="test_ipv6_from_down_status-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>test_ipv6_from_down_status</a></span></li><li><span><a href="#test_ipv6_from_up_status" data-toc-modified-id="test_ipv6_from_up_status-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>test_ipv6_from_up_status</a></span></li><li><span><a href="#test_ipv6_loopback_interface" data-toc-modified-id="test_ipv6_loopback_interface-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>test_ipv6_loopback_interface</a></span></li><li><span><a href="#test_ipv6_nd_converting_route" data-toc-modified-id="test_ipv6_nd_converting_route-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>test_ipv6_nd_converting_route</a></span></li><li><span><a href="#test_ipv6_nd_scale" data-toc-modified-id="test_ipv6_nd_scale-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>test_ipv6_nd_scale</a></span></li><li><span><a href="#test_ipv6_neighbor_discovery" data-toc-modified-id="test_ipv6_neighbor_discovery-3.10"><span class="toc-item-num">3.10&nbsp;&nbsp;</span>test_ipv6_neighbor_discovery</a></span></li><li><span><a href="#test_nd_performance" data-toc-modified-id="test_nd_performance-3.11"><span class="toc-item-num">3.11&nbsp;&nbsp;</span>test_nd_performance</a></span></li><li><span><a href="#test_ipv6_source_address_restrain_forwarding" data-toc-modified-id="test_ipv6_source_address_restrain_forwarding-3.12"><span class="toc-item-num">3.12&nbsp;&nbsp;</span>test_ipv6_source_address_restrain_forwarding</a></span></li><li><span><a href="#test_ipv6_source_address_selection" data-toc-modified-id="test_ipv6_source_address_selection-3.13"><span class="toc-item-num">3.13&nbsp;&nbsp;</span>test_ipv6_source_address_selection</a></span></li><li><span><a href="#test_ipv6_static_route" data-toc-modified-id="test_ipv6_static_route-3.14"><span class="toc-item-num">3.14&nbsp;&nbsp;</span>test_ipv6_static_route</a></span></li><li><span><a href="#test_ipv6_traffic_bgp" data-toc-modified-id="test_ipv6_traffic_bgp-3.15"><span class="toc-item-num">3.15&nbsp;&nbsp;</span>test_ipv6_traffic_bgp</a></span></li><li><span><a href="#test_ipv6_with_multiple_address_prefix" data-toc-modified-id="test_ipv6_with_multiple_address_prefix-3.16"><span class="toc-item-num">3.16&nbsp;&nbsp;</span>test_ipv6_with_multiple_address_prefix</a></span></li><li><span><a href="#test_ipv6_with_protocol_down_and_l3_interface" data-toc-modified-id="test_ipv6_with_protocol_down_and_l3_interface-3.17"><span class="toc-item-num">3.17&nbsp;&nbsp;</span>test_ipv6_with_protocol_down_and_l3_interface</a></span></li><li><span><a href="#test_ipv6_with_second_ip" data-toc-modified-id="test_ipv6_with_second_ip-3.18"><span class="toc-item-num">3.18&nbsp;&nbsp;</span>test_ipv6_with_second_ip</a></span></li></ul></li><li><span><a href="#L2-Feature-Tests" data-toc-modified-id="L2-Feature-Tests-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>L2 Feature Tests</a></span><ul class="toc-item"><li><span><a href="#test_l2_port_mtu_settings" data-toc-modified-id="test_l2_port_mtu_settings-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>test_l2_port_mtu_settings</a></span></li><li><span><a href="#test_l2_port_speed_fec" data-toc-modified-id="test_l2_port_speed_fec-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>test_l2_port_speed_fec</a></span></li><li><span><a href="#test_l2_port_statistics" data-toc-modified-id="test_l2_port_statistics-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>test_l2_port_statistics</a></span></li><li><span><a href="#test_l2_port_up_down" data-toc-modified-id="test_l2_port_up_down-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>test_l2_port_up_down</a></span></li></ul></li><li><span><a href="#RFC-Tests" data-toc-modified-id="RFC-Tests-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>RFC Tests</a></span><ul class="toc-item"><li><span><a href="#test_RFC2544" data-toc-modified-id="test_RFC2544-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>test_RFC2544</a></span></li></ul></li><li><span><a href="#QOS-Tests:" data-toc-modified-id="QOS-Tests:-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>QOS Tests:</a></span><ul class="toc-item"><li><span><a href="#test_qos" data-toc-modified-id="test_qos-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>test_qos</a></span></li></ul></li><li><span><a href="#VLAN-Feature-Tests:" data-toc-modified-id="VLAN-Feature-Tests:-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>VLAN Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#test_vlan_performance" data-toc-modified-id="test_vlan_performance-7.1"><span class="toc-item-num">7.1&nbsp;&nbsp;</span>test_vlan_performance</a></span></li><li><span><a href="#test_l3_vlan_settings" data-toc-modified-id="test_l3_vlan_settings-7.2"><span class="toc-item-num">7.2&nbsp;&nbsp;</span>test_l3_vlan_settings</a></span></li><li><span><a href="#test_l3_vlan_performance" data-toc-modified-id="test_l3_vlan_performance-7.3"><span class="toc-item-num">7.3&nbsp;&nbsp;</span>test_l3_vlan_performance</a></span></li><li><span><a href="#test_l2_vlan_settings" data-toc-modified-id="test_l2_vlan_settings-7.4"><span class="toc-item-num">7.4&nbsp;&nbsp;</span>test_l2_vlan_settings</a></span></li><li><span><a href="#test_ipv6_with_protocol_down_and_vlan_interface" data-toc-modified-id="test_ipv6_with_protocol_down_and_vlan_interface-7.5"><span class="toc-item-num">7.5&nbsp;&nbsp;</span>test_ipv6_with_protocol_down_and_vlan_interface</a></span></li></ul></li><li><span><a href="#ACL-Feature-Tests:" data-toc-modified-id="ACL-Feature-Tests:-8"><span class="toc-item-num">8&nbsp;&nbsp;</span>ACL Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#test_acl_performance" data-toc-modified-id="test_acl_performance-8.1"><span class="toc-item-num">8.1&nbsp;&nbsp;</span>test_acl_performance</a></span></li></ul></li><li><span><a href="#ARP-Feature-Tests:" data-toc-modified-id="ARP-Feature-Tests:-9"><span class="toc-item-num">9&nbsp;&nbsp;</span>ARP Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#test_arp_performance" data-toc-modified-id="test_arp_performance-9.1"><span class="toc-item-num">9.1&nbsp;&nbsp;</span>test_arp_performance</a></span></li><li><span><a href="#test_arp_proxy" data-toc-modified-id="test_arp_proxy-9.2"><span class="toc-item-num">9.2&nbsp;&nbsp;</span>test_arp_proxy</a></span></li><li><span><a href="#test_l3_vlan_performance" data-toc-modified-id="test_l3_vlan_performance-9.3"><span class="toc-item-num">9.3&nbsp;&nbsp;</span>test_l3_vlan_performance</a></span></li><li><span><a href="#test_l2_vlan_settings" data-toc-modified-id="test_l2_vlan_settings-9.4"><span class="toc-item-num">9.4&nbsp;&nbsp;</span>test_l2_vlan_settings</a></span></li><li><span><a href="#test_ipv6_with_protocol_down_and_vlan_interface" data-toc-modified-id="test_ipv6_with_protocol_down_and_vlan_interface-9.5"><span class="toc-item-num">9.5&nbsp;&nbsp;</span>test_ipv6_with_protocol_down_and_vlan_interface</a></span></li><li><span><a href="#test_ipv4_l3_arp" data-toc-modified-id="test_ipv4_l3_arp-9.6"><span class="toc-item-num">9.6&nbsp;&nbsp;</span>test_ipv4_l3_arp</a></span></li><li><span><a href="#test_mac_performance" data-toc-modified-id="test_mac_performance-9.7"><span class="toc-item-num">9.7&nbsp;&nbsp;</span>test_mac_performance</a></span></li></ul></li><li><span><a href="#DUAL-STACK-Feature-Tests:" data-toc-modified-id="DUAL-STACK-Feature-Tests:-10"><span class="toc-item-num">10&nbsp;&nbsp;</span>DUAL-STACK Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#test_ipv4_ipv6_err_frame_processing" data-toc-modified-id="test_ipv4_ipv6_err_frame_processing-10.1"><span class="toc-item-num">10.1&nbsp;&nbsp;</span>test_ipv4_ipv6_err_frame_processing</a></span></li><li><span><a href="#test_ipv4_ipv6_l2_msg" data-toc-modified-id="test_ipv4_ipv6_l2_msg-10.2"><span class="toc-item-num">10.2&nbsp;&nbsp;</span>test_ipv4_ipv6_l2_msg</a></span></li><li><span><a href="#test_ipv4_ipv6_maxip" data-toc-modified-id="test_ipv4_ipv6_maxip-10.3"><span class="toc-item-num">10.3&nbsp;&nbsp;</span>test_ipv4_ipv6_maxip</a></span></li><li><span><a href="#test_ipv4_ipv6_rfc2544" data-toc-modified-id="test_ipv4_ipv6_rfc2544-10.4"><span class="toc-item-num">10.4&nbsp;&nbsp;</span>test_ipv4_ipv6_rfc2544</a></span></li><li><span><a href="#test_ipv4_ipv6_route_forwarding" data-toc-modified-id="test_ipv4_ipv6_route_forwarding-10.5"><span class="toc-item-num">10.5&nbsp;&nbsp;</span>test_ipv4_ipv6_route_forwarding</a></span></li><li><span><a href="#test_ipv4_ipv6_with_aggregation_interface" data-toc-modified-id="test_ipv4_ipv6_with_aggregation_interface-10.6"><span class="toc-item-num">10.6&nbsp;&nbsp;</span>test_ipv4_ipv6_with_aggregation_interface</a></span></li><li><span><a href="#test_ipv4_ipv6_with_l3_interface" data-toc-modified-id="test_ipv4_ipv6_with_l3_interface-10.7"><span class="toc-item-num">10.7&nbsp;&nbsp;</span>test_ipv4_ipv6_with_l3_interface</a></span></li><li><span><a href="#test_ipv4_ipv6_with_vlan_interface" data-toc-modified-id="test_ipv4_ipv6_with_vlan_interface-10.8"><span class="toc-item-num">10.8&nbsp;&nbsp;</span>test_ipv4_ipv6_with_vlan_interface</a></span></li></ul></li><li><span><a href="#BGP-Feature-Tests" data-toc-modified-id="BGP-Feature-Tests-11"><span class="toc-item-num">11&nbsp;&nbsp;</span>BGP Feature Tests</a></span><ul class="toc-item"><li><span><a href="#test_bgp_ecmp_convergence_speed" data-toc-modified-id="test_bgp_ecmp_convergence_speed-11.1"><span class="toc-item-num">11.1&nbsp;&nbsp;</span>test_bgp_ecmp_convergence_speed</a></span></li><li><span><a href="#test_bgp_ecmp_flap" data-toc-modified-id="test_bgp_ecmp_flap-11.2"><span class="toc-item-num">11.2&nbsp;&nbsp;</span>test_bgp_ecmp_flap</a></span></li><li><span><a href="#test_bgp_functions" data-toc-modified-id="test_bgp_functions-11.3"><span class="toc-item-num">11.3&nbsp;&nbsp;</span>test_bgp_functions</a></span></li><li><span><a href="#test_bgp_neighbor_number_flip_performance" data-toc-modified-id="test_bgp_neighbor_number_flip_performance-11.4"><span class="toc-item-num">11.4&nbsp;&nbsp;</span>test_bgp_neighbor_number_flip_performance</a></span></li><li><span><a href="#test_bgp_pressure_ecmp" data-toc-modified-id="test_bgp_pressure_ecmp-11.5"><span class="toc-item-num">11.5&nbsp;&nbsp;</span>test_bgp_pressure_ecmp</a></span></li><li><span><a href="#test_bgp_pressure_general" data-toc-modified-id="test_bgp_pressure_general-11.6"><span class="toc-item-num">11.6&nbsp;&nbsp;</span>test_bgp_pressure_general</a></span></li><li><span><a href="#test_bgp_route_flap" data-toc-modified-id="test_bgp_route_flap-11.7"><span class="toc-item-num">11.7&nbsp;&nbsp;</span>test_bgp_route_flap</a></span></li><li><span><a href="#test_ebgp_convergence_speed" data-toc-modified-id="test_ebgp_convergence_speed-11.8"><span class="toc-item-num">11.8&nbsp;&nbsp;</span>test_ebgp_convergence_speed</a></span></li><li><span><a href="#test_ebgp_high_capacity_routing" data-toc-modified-id="test_ebgp_high_capacity_routing-11.9"><span class="toc-item-num">11.9&nbsp;&nbsp;</span>test_ebgp_high_capacity_routing</a></span></li><li><span><a href="#test_ecmp_table_specs" data-toc-modified-id="test_ecmp_table_specs-11.10"><span class="toc-item-num">11.10&nbsp;&nbsp;</span>test_ecmp_table_specs</a></span></li></ul></li><li><span><a href="#FDB-tests" data-toc-modified-id="FDB-tests-12"><span class="toc-item-num">12&nbsp;&nbsp;</span>FDB tests</a></span><ul class="toc-item"><li><span><a href="#test_acl_performance" data-toc-modified-id="test_acl_performance-12.1"><span class="toc-item-num">12.1&nbsp;&nbsp;</span>test_acl_performance</a></span></li><li><span><a href="#test_fib4_performance" data-toc-modified-id="test_fib4_performance-12.2"><span class="toc-item-num">12.2&nbsp;&nbsp;</span>test_fib4_performance</a></span></li><li><span><a href="#test_fib6_performance" data-toc-modified-id="test_fib6_performance-12.3"><span class="toc-item-num">12.3&nbsp;&nbsp;</span>test_fib6_performance</a></span></li></ul></li><li><span><a href="#LACP-Feature-Tests" data-toc-modified-id="LACP-Feature-Tests-13"><span class="toc-item-num">13&nbsp;&nbsp;</span>LACP Feature Tests</a></span><ul class="toc-item"><li><span><a href="#test_lacp" data-toc-modified-id="test_lacp-13.1"><span class="toc-item-num">13.1&nbsp;&nbsp;</span>test_lacp</a></span></li></ul></li><li><span><a href="#Port-Related-Tests" data-toc-modified-id="Port-Related-Tests-14"><span class="toc-item-num">14&nbsp;&nbsp;</span>Port Related Tests</a></span><ul class="toc-item"><li><span><a href="#test_mirroring_function" data-toc-modified-id="test_mirroring_function-14.1"><span class="toc-item-num">14.1&nbsp;&nbsp;</span>test_mirroring_function</a></span></li><li><span><a href="#test_link_delay" data-toc-modified-id="test_link_delay-14.2"><span class="toc-item-num">14.2&nbsp;&nbsp;</span>test_link_delay</a></span></li><li><span><a href="#test_port_buffer" data-toc-modified-id="test_port_buffer-14.3"><span class="toc-item-num">14.3&nbsp;&nbsp;</span>test_port_buffer</a></span></li></ul></li><li><span><a href="#VOQ/VRF-Tests" data-toc-modified-id="VOQ/VRF-Tests-15"><span class="toc-item-num">15&nbsp;&nbsp;</span>VOQ/VRF Tests</a></span><ul class="toc-item"><li><span><a href="#test_voq_imix" data-toc-modified-id="test_voq_imix-15.1"><span class="toc-item-num">15.1&nbsp;&nbsp;</span>test_voq_imix</a></span></li><li><span><a href="#test_vrf_functions" data-toc-modified-id="test_vrf_functions-15.2"><span class="toc-item-num">15.2&nbsp;&nbsp;</span>test_vrf_functions</a></span></li></ul></li></ul></div>
+<p><h1>Test Script Description<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#1.-Quick-Tests:" data-toc-modified-id="1.-Quick-Tests:-1">1. Quick Tests:</a></span><ul class="toc-item"><li><span><a href="#1.1-STARTUP-TEST" data-toc-modified-id="1.1-STARTUP-TEST-1.1">1.1 STARTUP TEST</a></span><ul class="toc-item"><li><span><a href="#1.1.1-test_smoking_2_1" data-toc-modified-id="1.1.1-test_smoking_2_1-1.1.1">1.1.1 test_smoking_2_1</a></span></li><li><span><a href="#1.1.2-test_smoking_2_2" data-toc-modified-id="1.1.2-test_smoking_2_2-1.1.2">1.1.2 test_smoking_2_2</a></span></li><li><span><a href="#1.1.3-test_smoking_2_3" data-toc-modified-id="1.1.3-test_smoking_2_3-1.1.3">1.1.3 test_smoking_2_3</a></span></li><li><span><a href="#1.1.4-test_smoking_2_4" data-toc-modified-id="1.1.4-test_smoking_2_4-1.1.4">1.1.4 test_smoking_2_4</a></span></li><li><span><a href="#1.1.5-test_smoking_2_5" data-toc-modified-id="1.1.5-test_smoking_2_5-1.1.5">1.1.5 test_smoking_2_5</a></span></li><li><span><a href="#1.1.6-test_smoking_2_8" data-toc-modified-id="1.1.6-test_smoking_2_8-1.1.6">1.1.6 test_smoking_2_8</a></span></li><li><span><a href="#1.1.7-test_machine_restart" data-toc-modified-id="1.1.7-test_machine_restart-1.1.7">1.1.7 test_machine_restart</a></span></li></ul></li><li><span><a href="#1.2-BASIC-PROTOCOL-TESTS" data-toc-modified-id="1.2-BASIC-PROTOCOL-TESTS-1.2">1.2 BASIC PROTOCOL TESTS</a></span><ul class="toc-item"><li><span><a href="#1.2.1-test_smoking_2_7" data-toc-modified-id="1.2.1-test_smoking_2_7-1.2.1">1.2.1 test_smoking_2_7</a></span></li><li><span><a href="#1.2.2-test_smoking_2_10" data-toc-modified-id="1.2.2-test_smoking_2_10-1.2.2">1.2.2 test_smoking_2_10</a></span></li><li><span><a href="#1.2.3-test_smoking_2_11" data-toc-modified-id="1.2.3-test_smoking_2_11-1.2.3">1.2.3 test_smoking_2_11</a></span></li><li><span><a href="#1.2.4-test_smoking_2_12_1" data-toc-modified-id="1.2.4-test_smoking_2_12_1-1.2.4">1.2.4 test_smoking_2_12_1</a></span></li><li><span><a href="#1.2.5-test_smoking_2_12_2" data-toc-modified-id="1.2.5-test_smoking_2_12_2-1.2.5">1.2.5 test_smoking_2_12_2</a></span></li><li><span><a href="#1.2.6-test_smoking_2_12_2_3" data-toc-modified-id="1.2.6-test_smoking_2_12_2_3-1.2.6">1.2.6 test_smoking_2_12_2_3</a></span></li><li><span><a href="#1.2.7-test_smoking_2_12_3" data-toc-modified-id="1.2.7-test_smoking_2_12_3-1.2.7">1.2.7 test_smoking_2_12_3</a></span></li><li><span><a href="#1.2.8-test_smoking_2_13" data-toc-modified-id="1.2.8-test_smoking_2_13-1.2.8">1.2.8 test_smoking_2_13</a></span></li><li><span><a href="#1.2.9-test_smoking_2_14" data-toc-modified-id="1.2.9-test_smoking_2_14-1.2.9">1.2.9 test_smoking_2_14</a></span></li></ul></li></ul></li><li><span><a href="#2.-IPv4-Feature-Tests" data-toc-modified-id="2.-IPv4-Feature-Tests-2">2. IPv4 Feature Tests</a></span><ul class="toc-item"><li><span><a href="#2.1-test_ipv4_from_down_status" data-toc-modified-id="2.1-test_ipv4_from_down_status-2.1">2.1 test_ipv4_from_down_status</a></span></li><li><span><a href="#2.2-test_ipv4_from_up_status" data-toc-modified-id="2.2-test_ipv4_from_up_status-2.2">2.2 test_ipv4_from_up_status</a></span></li><li><span><a href="#2.3-test_ipv4_l3_msg" data-toc-modified-id="2.3-test_ipv4_l3_msg-2.3">2.3 test_ipv4_l3_msg</a></span></li><li><span><a href="#2.4-test_ipv4_with_multiple_address_mask" data-toc-modified-id="2.4-test_ipv4_with_multiple_address_mask-2.4">2.4 test_ipv4_with_multiple_address_mask</a></span></li><li><span><a href="#2.5-test_ipv4_with_second_ip" data-toc-modified-id="2.5-test_ipv4_with_second_ip-2.5">2.5 test_ipv4_with_second_ip</a></span></li></ul></li><li><span><a href="#3.-IPv6-Feature-Tests:" data-toc-modified-id="3.-IPv6-Feature-Tests:-3">3. IPv6 Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#3.1-test_ipv6_6_1" data-toc-modified-id="3.1-test_ipv6_6_1-3.1">3.1 test_ipv6_6_1</a></span></li><li><span><a href="#3.2-test_ipv6_8_1" data-toc-modified-id="3.2-test_ipv6_8_1-3.2">3.2 test_ipv6_8_1</a></span></li><li><span><a href="#3.3-test_ipv6_8_2" data-toc-modified-id="3.3-test_ipv6_8_2-3.3">3.3 test_ipv6_8_2</a></span></li><li><span><a href="#3.4-test_ipv6_aggregation_port" data-toc-modified-id="3.4-test_ipv6_aggregation_port-3.4">3.4 test_ipv6_aggregation_port</a></span></li><li><span><a href="#3.5-test_ipv6_from_down_status" data-toc-modified-id="3.5-test_ipv6_from_down_status-3.5">3.5 test_ipv6_from_down_status</a></span></li><li><span><a href="#3.6-test_ipv6_from_up_status" data-toc-modified-id="3.6-test_ipv6_from_up_status-3.6">3.6 test_ipv6_from_up_status</a></span></li><li><span><a href="#3.7-test_ipv6_loopback_interface" data-toc-modified-id="3.7-test_ipv6_loopback_interface-3.7">3.7 test_ipv6_loopback_interface</a></span></li><li><span><a href="#3.8-test_ipv6_nd_converting_route" data-toc-modified-id="3.8-test_ipv6_nd_converting_route-3.8">3.8 test_ipv6_nd_converting_route</a></span></li><li><span><a href="#3.9-test_ipv6_nd_scale" data-toc-modified-id="3.9-test_ipv6_nd_scale-3.9">3.9 test_ipv6_nd_scale</a></span></li><li><span><a href="#3.10-test_ipv6_neighbor_discovery" data-toc-modified-id="3.10-test_ipv6_neighbor_discovery-3.10">3.10 test_ipv6_neighbor_discovery</a></span></li><li><span><a href="#3.11-test_nd_performance" data-toc-modified-id="3.11-test_nd_performance-3.11">3.11 test_nd_performance</a></span></li><li><span><a href="#3.12-test_ipv6_source_address_restrain_forwarding" data-toc-modified-id="3.12-test_ipv6_source_address_restrain_forwarding-3.12">3.12 test_ipv6_source_address_restrain_forwarding</a></span></li><li><span><a href="#3.13-test_ipv6_source_address_selection" data-toc-modified-id="3.13-test_ipv6_source_address_selection-3.13">3.13 test_ipv6_source_address_selection</a></span></li><li><span><a href="#3.14-test_ipv6_static_route" data-toc-modified-id="3.14-test_ipv6_static_route-3.14">3.14 test_ipv6_static_route</a></span></li><li><span><a href="#3.15-test_ipv6_traffic_bgp" data-toc-modified-id="3.15-test_ipv6_traffic_bgp-3.15">3.15 test_ipv6_traffic_bgp</a></span></li><li><span><a href="#3.16-test_ipv6_with_multiple_address_prefix" data-toc-modified-id="3.16-test_ipv6_with_multiple_address_prefix-3.16">3.16 test_ipv6_with_multiple_address_prefix</a></span></li><li><span><a href="#3.17-test_ipv6_with_protocol_down_and_l3_interface" data-toc-modified-id="3.17-test_ipv6_with_protocol_down_and_l3_interface-3.17">3.17 test_ipv6_with_protocol_down_and_l3_interface</a></span></li><li><span><a href="#3.18-test_ipv6_with_second_ip" data-toc-modified-id="3.18-test_ipv6_with_second_ip-3.18">3.18 test_ipv6_with_second_ip</a></span></li></ul></li><li><span><a href="#4.-L2-Feature-Tests" data-toc-modified-id="4.-L2-Feature-Tests-4">4. L2 Feature Tests</a></span><ul class="toc-item"><li><span><a href="#4.1-test_l2_port_mtu_settings" data-toc-modified-id="4.1-test_l2_port_mtu_settings-4.1">4.1 test_l2_port_mtu_settings</a></span></li><li><span><a href="#4.2-test_l2_port_speed_fec" data-toc-modified-id="4.2-test_l2_port_speed_fec-4.2">4.2 test_l2_port_speed_fec</a></span></li><li><span><a href="#4.3-test_l2_port_statistics" data-toc-modified-id="4.3-test_l2_port_statistics-4.3">4.3 test_l2_port_statistics</a></span></li><li><span><a href="#4.4-test_l2_port_up_down" data-toc-modified-id="4.4-test_l2_port_up_down-4.4">4.4 test_l2_port_up_down</a></span></li></ul></li><li><span><a href="#5.-RFC-Tests" data-toc-modified-id="5.-RFC-Tests-5">5. RFC Tests</a></span><ul class="toc-item"><li><span><a href="#5.1-test_RFC2544" data-toc-modified-id="5.1-test_RFC2544-5.1">5.1 test_RFC2544</a></span></li></ul></li><li><span><a href="#6.-QOS-Tests:" data-toc-modified-id="6.-QOS-Tests:-6">6. QOS Tests:</a></span><ul class="toc-item"><li><span><a href="#6.1-test_qos" data-toc-modified-id="6.1-test_qos-6.1">6.1 test_qos</a></span></li></ul></li><li><span><a href="#7.-VLAN-Feature-Tests:" data-toc-modified-id="7.-VLAN-Feature-Tests:-7">7. VLAN Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#7.1-test_vlan_performance" data-toc-modified-id="7.1-test_vlan_performance-7.1">7.1 test_vlan_performance</a></span></li><li><span><a href="#7.2-test_l3_vlan_settings" data-toc-modified-id="7.2-test_l3_vlan_settings-7.2">7.2 test_l3_vlan_settings</a></span></li><li><span><a href="#7.3-test_l3_vlan_performance" data-toc-modified-id="7.3-test_l3_vlan_performance-7.3">7.3 test_l3_vlan_performance</a></span></li><li><span><a href="#7.4-test_l2_vlan_settings" data-toc-modified-id="7.4-test_l2_vlan_settings-7.4">7.4 test_l2_vlan_settings</a></span></li><li><span><a href="#7.5-test_ipv6_with_protocol_down_and_vlan_interface" data-toc-modified-id="7.5-test_ipv6_with_protocol_down_and_vlan_interface-7.5">7.5 test_ipv6_with_protocol_down_and_vlan_interface</a></span></li></ul></li><li><span><a href="#8.-ACL-Feature-Tests:" data-toc-modified-id="8.-ACL-Feature-Tests:-8">8. ACL Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#8.1-test_acl_performance" data-toc-modified-id="8.1-test_acl_performance-8.1">8.1 test_acl_performance</a></span></li></ul></li><li><span><a href="#9.-ARP-Feature-Tests:" data-toc-modified-id="9.-ARP-Feature-Tests:-9">9. ARP Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#9.1-test_arp_performance" data-toc-modified-id="9.1-test_arp_performance-9.1">9.1 test_arp_performance</a></span></li><li><span><a href="#9.2-test_arp_proxy" data-toc-modified-id="9.2-test_arp_proxy-9.2">9.2 test_arp_proxy</a></span></li><li><span><a href="#9.3-test_l3_vlan_performance" data-toc-modified-id="9.3-test_l3_vlan_performance-9.3">9.3 test_l3_vlan_performance</a></span></li><li><span><a href="#9.4-test_l2_vlan_settings" data-toc-modified-id="9.4-test_l2_vlan_settings-9.4">9.4 test_l2_vlan_settings</a></span></li><li><span><a href="#9.5-test_ipv6_with_protocol_down_and_vlan_interface" data-toc-modified-id="9.5-test_ipv6_with_protocol_down_and_vlan_interface-9.5">9.5 test_ipv6_with_protocol_down_and_vlan_interface</a></span></li><li><span><a href="#9.6-test_ipv4_l3_arp" data-toc-modified-id="9.6-test_ipv4_l3_arp-9.6">9.6 test_ipv4_l3_arp</a></span></li><li><span><a href="#9.7-test_mac_performance" data-toc-modified-id="9.7-test_mac_performance-9.7">9.7 test_mac_performance</a></span></li></ul></li><li><span><a href="#10.-DUAL-STACK-Feature-Tests:" data-toc-modified-id="10.-DUAL-STACK-Feature-Tests:-10">10. DUAL-STACK Feature Tests:</a></span><ul class="toc-item"><li><span><a href="#10.1-test_ipv4_ipv6_err_frame_processing" data-toc-modified-id="10.1-test_ipv4_ipv6_err_frame_processing-10.1">10.1 test_ipv4_ipv6_err_frame_processing</a></span></li><li><span><a href="#10.2-test_ipv4_ipv6_l2_msg" data-toc-modified-id="10.2-test_ipv4_ipv6_l2_msg-10.2">10.2 test_ipv4_ipv6_l2_msg</a></span></li><li><span><a href="#10.3-test_ipv4_ipv6_maxip" data-toc-modified-id="10.3-test_ipv4_ipv6_maxip-10.3">10.3 test_ipv4_ipv6_maxip</a></span></li><li><span><a href="#10.4-test_ipv4_ipv6_rfc2544" data-toc-modified-id="10.4-test_ipv4_ipv6_rfc2544-10.4">10.4 test_ipv4_ipv6_rfc2544</a></span></li><li><span><a href="#10.5-test_ipv4_ipv6_route_forwarding" data-toc-modified-id="10.5-test_ipv4_ipv6_route_forwarding-10.5">10.5 test_ipv4_ipv6_route_forwarding</a></span></li><li><span><a href="#10.6-test_ipv4_ipv6_with_aggregation_interface" data-toc-modified-id="10.6-test_ipv4_ipv6_with_aggregation_interface-10.6">10.6 test_ipv4_ipv6_with_aggregation_interface</a></span></li><li><span><a href="#10.7-test_ipv4_ipv6_with_l3_interface" data-toc-modified-id="10.7-test_ipv4_ipv6_with_l3_interface-10.7">10.7 test_ipv4_ipv6_with_l3_interface</a></span></li><li><span><a href="#10.8-test_ipv4_ipv6_with_vlan_interface" data-toc-modified-id="10.8-test_ipv4_ipv6_with_vlan_interface-10.8">10.8 test_ipv4_ipv6_with_vlan_interface</a></span></li></ul></li><li><span><a href="#11.-BGP-Feature-Tests" data-toc-modified-id="11.-BGP-Feature-Tests-11">11. BGP Feature Tests</a></span><ul class="toc-item"><li><span><a href="#11.1-test_bgp_ecmp_convergence_speed" data-toc-modified-id="11.1-test_bgp_ecmp_convergence_speed-11.1">11.1 test_bgp_ecmp_convergence_speed</a></span></li><li><span><a href="#11.2-test_bgp_ecmp_flap" data-toc-modified-id="11.2-test_bgp_ecmp_flap-11.2">11.2 test_bgp_ecmp_flap</a></span></li><li><span><a href="#11.3-test_bgp_functions" data-toc-modified-id="11.3-test_bgp_functions-11.3">11.3 test_bgp_functions</a></span></li><li><span><a href="#11.4-test_bgp_neighbor_number_flip_performance" data-toc-modified-id="11.4-test_bgp_neighbor_number_flip_performance-11.4">11.4 test_bgp_neighbor_number_flip_performance</a></span></li><li><span><a href="#11.5-test_bgp_pressure_ecmp" data-toc-modified-id="11.5-test_bgp_pressure_ecmp-11.5">11.5 test_bgp_pressure_ecmp</a></span></li><li><span><a href="#11.6-test_bgp_pressure_general" data-toc-modified-id="11.6-test_bgp_pressure_general-11.6">11.6 test_bgp_pressure_general</a></span></li><li><span><a href="#11.7-test_bgp_route_flap" data-toc-modified-id="11.7-test_bgp_route_flap-11.7">11.7 test_bgp_route_flap</a></span></li><li><span><a href="#11.8-test_ebgp_convergence_speed" data-toc-modified-id="11.8-test_ebgp_convergence_speed-11.8">11.8 test_ebgp_convergence_speed</a></span></li><li><span><a href="#11.9-test_ebgp_high_capacity_routing" data-toc-modified-id="11.9-test_ebgp_high_capacity_routing-11.9">11.9 test_ebgp_high_capacity_routing</a></span></li><li><span><a href="#11.10-test_ecmp_table_specs" data-toc-modified-id="11.10-test_ecmp_table_specs-11.10">11.10 test_ecmp_table_specs</a></span></li></ul></li><li><span><a href="#12.-FDB-tests" data-toc-modified-id="12.-FDB-tests-12">12. FDB tests</a></span><ul class="toc-item"><li><span><a href="#12.1-test_acl_performance" data-toc-modified-id="12.1-test_acl_performance-12.1">12.1 test_acl_performance</a></span></li><li><span><a href="#12.2-test_fib4_performance" data-toc-modified-id="12.2-test_fib4_performance-12.2">12.2 test_fib4_performance</a></span></li><li><span><a href="#12.3-test_fib6_performance" data-toc-modified-id="12.3-test_fib6_performance-12.3">12.3 test_fib6_performance</a></span></li></ul></li><li><span><a href="#13.-LACP-Feature-Tests" data-toc-modified-id="13.-LACP-Feature-Tests-13">13. LACP Feature Tests</a></span><ul class="toc-item"><li><span><a href="#13.1-test_lacp" data-toc-modified-id="13.1-test_lacp-13.1">13.1 test_lacp</a></span></li></ul></li><li><span><a href="#14.-Port-Related-Tests" data-toc-modified-id="14.-Port-Related-Tests-14">14. Port Related Tests</a></span><ul class="toc-item"><li><span><a href="#14.1-test_mirroring_function" data-toc-modified-id="14.1-test_mirroring_function-14.1">14.1 test_mirroring_function</a></span></li><li><span><a href="#14.2-test_link_delay" data-toc-modified-id="14.2-test_link_delay-14.2">14.2 test_link_delay</a></span></li><li><span><a href="#14.3-test_port_buffer" data-toc-modified-id="14.3-test_port_buffer-14.3">14.3 test_port_buffer</a></span></li></ul></li><li><span><a href="#15.-VOQ/VRF-Tests" data-toc-modified-id="15.-VOQ/VRF-Tests-15">15. VOQ/VRF Tests</a></span><ul class="toc-item"><li><span><a href="#15.1-test_voq_imix" data-toc-modified-id="15.1-test_voq_imix-15.1">15.1 test_voq_imix</a></span></li><li><span><a href="#15.2-test_vrf_functions" data-toc-modified-id="15.2-test_vrf_functions-15.2">15.2 test_vrf_functions</a></span></li></ul></li></ul></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="1.-Quick-Tests:">1. Quick Tests:<a class="anchor-link" href="#1.-Quick-Tests:">&#182;</a></h2><p><para> Users can run these tests to validate the basic functionality and basic traffic flow <param></p>
 
 </div>
 </div>
@@ -14605,65 +14603,53 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Quick-Tests:">Quick Tests:<a class="anchor-link" href="#Quick-Tests:">&#182;</a></h2><p><para> Users can run these tests to validate the basic functionality and basic traffic flow <param></p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="STARTUP-TEST">STARTUP TEST<a class="anchor-link" href="#STARTUP-TEST">&#182;</a></h3><h4 id="test_smoking_2_1">test_smoking_2_1<a class="anchor-link" href="#test_smoking_2_1">&#182;</a></h4><ul>
+<h3 id="1.1-STARTUP-TEST">1.1 STARTUP TEST<a class="anchor-link" href="#1.1-STARTUP-TEST">&#182;</a></h3><h4 id="1.1.1-test_smoking_2_1">1.1.1 test_smoking_2_1<a class="anchor-link" href="#1.1.1-test_smoking_2_1">&#182;</a></h4><ul>
 <li>Validate software version information on DUT</li>
 </ul>
-<h4 id="test_smoking_2_2">test_smoking_2_2<a class="anchor-link" href="#test_smoking_2_2">&#182;</a></h4><ul>
-<li>Validate device EEPROM information on the DUT.</li>
+<h4 id="1.1.2-test_smoking_2_2">1.1.2 test_smoking_2_2<a class="anchor-link" href="#1.1.2-test_smoking_2_2">&#182;</a></h4><ul>
+<li>Validate device EEPROM information on the DUT</li>
 </ul>
-<h4 id="test_smoking_2_3">test_smoking_2_3<a class="anchor-link" href="#test_smoking_2_3">&#182;</a></h4><ul>
-<li>Validate DUT memory usage before and after restart of the device.</li>
+<h4 id="1.1.3-test_smoking_2_3">1.1.3 test_smoking_2_3<a class="anchor-link" href="#1.1.3-test_smoking_2_3">&#182;</a></h4><ul>
+<li>Validate DUT memory usage before and after restart of the device</li>
 </ul>
-<h4 id="test_smoking_2_4">test_smoking_2_4<a class="anchor-link" href="#test_smoking_2_4">&#182;</a></h4><ul>
+<h4 id="1.1.4-test_smoking_2_4">1.1.4 test_smoking_2_4<a class="anchor-link" href="#1.1.4-test_smoking_2_4">&#182;</a></h4><ul>
 <li>Validate device CPU usage</li>
 </ul>
-<h4 id="test_smoking_2_5">test_smoking_2_5<a class="anchor-link" href="#test_smoking_2_5">&#182;</a></h4><ul>
+<h4 id="1.1.5-test_smoking_2_5">1.1.5 test_smoking_2_5<a class="anchor-link" href="#1.1.5-test_smoking_2_5">&#182;</a></h4><ul>
 <li>Validate device information: sensor, fan, power supply, and other related information are normal</li>
 </ul>
-<h4 id="test_smoking_2_8">test_smoking_2_8<a class="anchor-link" href="#test_smoking_2_8">&#182;</a></h4><ul>
-<li>Validate port functionality by sending ping between DUT ports and checking no packet loss.</li>
+<h4 id="1.1.6-test_smoking_2_8">1.1.6 test_smoking_2_8<a class="anchor-link" href="#1.1.6-test_smoking_2_8">&#182;</a></h4><ul>
+<li>Validate port functionality by sending ping between DUT ports and checking no packet loss</li>
 </ul>
-<h4 id="test_machine_restart">test_machine_restart<a class="anchor-link" href="#test_machine_restart">&#182;</a></h4><ul>
+<h4 id="1.1.7-test_machine_restart">1.1.7 test_machine_restart<a class="anchor-link" href="#1.1.7-test_machine_restart">&#182;</a></h4><ul>
 <li>Validate DUT traffic recovery after DUT reboot</li>
 </ul>
-<h3 id="BASIC-PROTOCOL-TESTS">BASIC PROTOCOL TESTS<a class="anchor-link" href="#BASIC-PROTOCOL-TESTS">&#182;</a></h3><h4 id="test_smoking_2_7">test_smoking_2_7<a class="anchor-link" href="#test_smoking_2_7">&#182;</a></h4><ul>
-<li>Validate UDP, and TCP traffic flow between DUTs.</li>
+<h3 id="1.2-BASIC-PROTOCOL-TESTS">1.2 BASIC PROTOCOL TESTS<a class="anchor-link" href="#1.2-BASIC-PROTOCOL-TESTS">&#182;</a></h3><h4 id="1.2.1-test_smoking_2_7">1.2.1 test_smoking_2_7<a class="anchor-link" href="#1.2.1-test_smoking_2_7">&#182;</a></h4><ul>
+<li>Validate UDP, and TCP traffic flow between DUTs</li>
 </ul>
-<h4 id="test_smoking_2_10">test_smoking_2_10<a class="anchor-link" href="#test_smoking_2_10">&#182;</a></h4><ul>
-<li>Validate MAC basic functionality by configuring VLAN, checking the traffic flow, and mac learning on DUT.</li>
+<h4 id="1.2.2-test_smoking_2_10">1.2.2 test_smoking_2_10<a class="anchor-link" href="#1.2.2-test_smoking_2_10">&#182;</a></h4><ul>
+<li>Validate MAC basic functionality by configuring VLAN, checking the traffic flow, and mac learning on DUT</li>
 </ul>
-<h4 id="test_smoking_2_11">test_smoking_2_11<a class="anchor-link" href="#test_smoking_2_11">&#182;</a></h4><ul>
-<li>Validate the VLAN interface sends and receives ICMP packets and ARP status is up between two DUTs.</li>
+<h4 id="1.2.3-test_smoking_2_11">1.2.3 test_smoking_2_11<a class="anchor-link" href="#1.2.3-test_smoking_2_11">&#182;</a></h4><ul>
+<li>Validate the VLAN interface sends and receives ICMP packets and ARP status is up between two DUTs</li>
 </ul>
-<h4 id="test_smoking_2_12_1">test_smoking_2_12_1<a class="anchor-link" href="#test_smoking_2_12_1">&#182;</a></h4><ul>
-<li>Validate LACP basic functionality on layer2, by checking the negotiation is successful, the show port-channel summary, and the load sharing between the DUTs.</li>
+<h4 id="1.2.4-test_smoking_2_12_1">1.2.4 test_smoking_2_12_1<a class="anchor-link" href="#1.2.4-test_smoking_2_12_1">&#182;</a></h4><ul>
+<li>Validate LACP basic functionality on layer2, by checking the negotiation is successful, the show port-channel summary, and the load sharing between the DUTs</li>
 </ul>
-<h4 id="test_smoking_2_12_2">test_smoking_2_12_2<a class="anchor-link" href="#test_smoking_2_12_2">&#182;</a></h4><ul>
-<li>Validate LACP basic functionality on layer3, by checking the negotiation is successful, the show port-channel summary, and the load sharing between the DUTs.</li>
+<h4 id="1.2.5-test_smoking_2_12_2">1.2.5 test_smoking_2_12_2<a class="anchor-link" href="#1.2.5-test_smoking_2_12_2">&#182;</a></h4><ul>
+<li>Validate LACP basic functionality on layer3, by checking the negotiation is successful, the show port-channel summary, and the load sharing between the DUTs</li>
 </ul>
-<h4 id="test_smoking_2_12_2_3">test_smoking_2_12_2_3<a class="anchor-link" href="#test_smoking_2_12_2_3">&#182;</a></h4><ul>
-<li>Validate LACP basic functionality on layer3, by checking the negotiation is successful, the show port-channel summary, and the load sharing between the DUTs.</li>
+<h4 id="1.2.6-test_smoking_2_12_2_3">1.2.6 test_smoking_2_12_2_3<a class="anchor-link" href="#1.2.6-test_smoking_2_12_2_3">&#182;</a></h4><ul>
+<li>Validate LACP basic functionality on layer3, by checking the negotiation is successful, the show port-channel summary, and the load sharing between the DUTs</li>
 </ul>
-<h4 id="test_smoking_2_12_3">test_smoking_2_12_3<a class="anchor-link" href="#test_smoking_2_12_3">&#182;</a></h4><ul>
-<li>Validate LACP basic functionality on layer3, by checking the negotiation is successful, the show port-channel summary, and the load sharing between the DUTs.</li>
+<h4 id="1.2.7-test_smoking_2_12_3">1.2.7 test_smoking_2_12_3<a class="anchor-link" href="#1.2.7-test_smoking_2_12_3">&#182;</a></h4><ul>
+<li>Validate LACP basic functionality on layer3, by checking the negotiation is successful, the show port-channel summary, and the load sharing between the DUTs</li>
 </ul>
-<h4 id="test_smoking_2_13">test_smoking_2_13<a class="anchor-link" href="#test_smoking_2_13">&#182;</a></h4><ul>
-<li>Validate BGP basic functionality, by verifying the show BGP summary, IP route information, and the Layer 3 forwarding is normal between the DUTs.</li>
+<h4 id="1.2.8-test_smoking_2_13">1.2.8 test_smoking_2_13<a class="anchor-link" href="#1.2.8-test_smoking_2_13">&#182;</a></h4><ul>
+<li>Validate BGP basic functionality, by verifying the show BGP summary, IP route information, and the Layer 3 forwarding is normal between the DUTs</li>
 </ul>
-<h4 id="test_smoking_2_14">test_smoking_2_14<a class="anchor-link" href="#test_smoking_2_14">&#182;</a></h4><ul>
-<li>Validate LLDP functionality, by verifying the lldp neighbors in DUT.</li>
+<h4 id="1.2.9-test_smoking_2_14">1.2.9 test_smoking_2_14<a class="anchor-link" href="#1.2.9-test_smoking_2_14">&#182;</a></h4><ul>
+<li>Validate LLDP functionality, by verifying the lldp neighbors in DUT</li>
 </ul>
 
 </div>
@@ -14676,20 +14662,20 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="IPv4-Feature-Tests">IPv4 Feature Tests<a class="anchor-link" href="#IPv4-Feature-Tests">&#182;</a></h2><h3 id="test_ipv4_from_down_status">test_ipv4_from_down_status<a class="anchor-link" href="#test_ipv4_from_down_status">&#182;</a></h3><ul>
+<h2 id="2.-IPv4-Feature-Tests">2. IPv4 Feature Tests<a class="anchor-link" href="#2.-IPv4-Feature-Tests">&#182;</a></h2><h3 id="2.1-test_ipv4_from_down_status">2.1 test_ipv4_from_down_status<a class="anchor-link" href="#2.1-test_ipv4_from_down_status">&#182;</a></h3><ul>
 <li>Validate the IPv4 address configuration when the L3 interface is down</li>
 </ul>
-<h3 id="test_ipv4_from_up_status">test_ipv4_from_up_status<a class="anchor-link" href="#test_ipv4_from_up_status">&#182;</a></h3><ul>
+<h3 id="2.2-test_ipv4_from_up_status">2.2 test_ipv4_from_up_status<a class="anchor-link" href="#2.2-test_ipv4_from_up_status">&#182;</a></h3><ul>
 <li>Validate the IPv4 address configuration when L3 interface is up</li>
 </ul>
-<h3 id="test_ipv4_l3_msg">test_ipv4_l3_msg<a class="anchor-link" href="#test_ipv4_l3_msg">&#182;</a></h3><ul>
+<h3 id="2.3-test_ipv4_l3_msg">2.3 test_ipv4_l3_msg<a class="anchor-link" href="#2.3-test_ipv4_l3_msg">&#182;</a></h3><ul>
 <li>Validate if any errors reported when different classes of IP (class A, class B, class C and class D)</li>
 </ul>
-<h3 id="test_ipv4_with_multiple_address_mask">test_ipv4_with_multiple_address_mask<a class="anchor-link" href="#test_ipv4_with_multiple_address_mask">&#182;</a></h3><ul>
+<h3 id="2.4-test_ipv4_with_multiple_address_mask">2.4 test_ipv4_with_multiple_address_mask<a class="anchor-link" href="#2.4-test_ipv4_with_multiple_address_mask">&#182;</a></h3><ul>
 <li>Verify the L3 port status when 8-bit, 16-bit, 24-bit, 26-bit, 31-bit ipv4 addresses are configured</li>
 </ul>
-<h3 id="test_ipv4_with_second_ip">test_ipv4_with_second_ip<a class="anchor-link" href="#test_ipv4_with_second_ip">&#182;</a></h3><ul>
-<li>Validate the IPv4 interface configuration when multiple IP addresses are configured.</li>
+<h3 id="2.5-test_ipv4_with_second_ip">2.5 test_ipv4_with_second_ip<a class="anchor-link" href="#2.5-test_ipv4_with_second_ip">&#182;</a></h3><ul>
+<li>Validate the IPv4 interface configuration when multiple IP addresses are configured. </li>
 </ul>
 
 </div>
@@ -14702,58 +14688,58 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="IPv6-Feature-Tests:">IPv6 Feature Tests:<a class="anchor-link" href="#IPv6-Feature-Tests:">&#182;</a></h2><h3 id="test_ipv6_6_1">test_ipv6_6_1<a class="anchor-link" href="#test_ipv6_6_1">&#182;</a></h3><ul>
+<h2 id="3.-IPv6-Feature-Tests:">3. IPv6 Feature Tests:<a class="anchor-link" href="#3.-IPv6-Feature-Tests:">&#182;</a></h2><h3 id="3.1-test_ipv6_6_1">3.1 test_ipv6_6_1<a class="anchor-link" href="#3.1-test_ipv6_6_1">&#182;</a></h3><ul>
 <li>Validate frame loss with various frame sizes between traffic generator and DUT.</li>
 </ul>
-<h3 id="test_ipv6_8_1">test_ipv6_8_1<a class="anchor-link" href="#test_ipv6_8_1">&#182;</a></h3><ul>
-<li>Validate MAC basic functionality by configuring VLAN, checking the traffic flow, and mac learning on DUT.</li>
+<h3 id="3.2-test_ipv6_8_1">3.2 test_ipv6_8_1<a class="anchor-link" href="#3.2-test_ipv6_8_1">&#182;</a></h3><ul>
+<li>Validate MAC basic functionality by configuring VLAN, checking the traffic flow, and mac learning on DUT. </li>
 </ul>
-<h3 id="test_ipv6_8_2">test_ipv6_8_2<a class="anchor-link" href="#test_ipv6_8_2">&#182;</a></h3><ul>
+<h3 id="3.3-test_ipv6_8_2">3.3 test_ipv6_8_2<a class="anchor-link" href="#3.3-test_ipv6_8_2">&#182;</a></h3><ul>
 <li>Validate the packet forwarding vs sending locally when HopLimit is configured</li>
 </ul>
-<h3 id="test_ipv6_aggregation_port">test_ipv6_aggregation_port<a class="anchor-link" href="#test_ipv6_aggregation_port">&#182;</a></h3><ul>
+<h3 id="3.4-test_ipv6_aggregation_port">3.4 test_ipv6_aggregation_port<a class="anchor-link" href="#3.4-test_ipv6_aggregation_port">&#182;</a></h3><ul>
 <li>Validate the port channel attachment to VLAN and validate traffic</li>
 </ul>
-<h3 id="test_ipv6_from_down_status">test_ipv6_from_down_status<a class="anchor-link" href="#test_ipv6_from_down_status">&#182;</a></h3><ul>
+<h3 id="3.5-test_ipv6_from_down_status">3.5 test_ipv6_from_down_status<a class="anchor-link" href="#3.5-test_ipv6_from_down_status">&#182;</a></h3><ul>
 <li>Test to validate IPv6 address config when interface down state</li>
 </ul>
-<h3 id="test_ipv6_from_up_status">test_ipv6_from_up_status<a class="anchor-link" href="#test_ipv6_from_up_status">&#182;</a></h3><ul>
+<h3 id="3.6-test_ipv6_from_up_status">3.6 test_ipv6_from_up_status<a class="anchor-link" href="#3.6-test_ipv6_from_up_status">&#182;</a></h3><ul>
 <li>Validate IPv6 address config when interface up state</li>
 </ul>
-<h3 id="test_ipv6_loopback_interface">test_ipv6_loopback_interface<a class="anchor-link" href="#test_ipv6_loopback_interface">&#182;</a></h3><ul>
+<h3 id="3.7-test_ipv6_loopback_interface">3.7 test_ipv6_loopback_interface<a class="anchor-link" href="#3.7-test_ipv6_loopback_interface">&#182;</a></h3><ul>
 <li>Validate IPv6 local address config</li>
 </ul>
-<h3 id="test_ipv6_nd_converting_route">test_ipv6_nd_converting_route<a class="anchor-link" href="#test_ipv6_nd_converting_route">&#182;</a></h3><ul>
+<h3 id="3.8-test_ipv6_nd_converting_route">3.8 test_ipv6_nd_converting_route<a class="anchor-link" href="#3.8-test_ipv6_nd_converting_route">&#182;</a></h3><ul>
 <li>Validate IPv6 static route config</li>
 </ul>
-<h3 id="test_ipv6_nd_scale">test_ipv6_nd_scale<a class="anchor-link" href="#test_ipv6_nd_scale">&#182;</a></h3><ul>
+<h3 id="3.9-test_ipv6_nd_scale">3.9 test_ipv6_nd_scale<a class="anchor-link" href="#3.9-test_ipv6_nd_scale">&#182;</a></h3><ul>
 <li>Validate IPv6 neighbour discovery on a specific interface and globally.</li>
 </ul>
-<h3 id="test_ipv6_neighbor_discovery">test_ipv6_neighbor_discovery<a class="anchor-link" href="#test_ipv6_neighbor_discovery">&#182;</a></h3><ul>
+<h3 id="3.10-test_ipv6_neighbor_discovery">3.10 test_ipv6_neighbor_discovery<a class="anchor-link" href="#3.10-test_ipv6_neighbor_discovery">&#182;</a></h3><ul>
 <li>Validate neighbour discovery, routing entry aging, deletion, and capability test</li>
 </ul>
-<h3 id="test_nd_performance">test_nd_performance<a class="anchor-link" href="#test_nd_performance">&#182;</a></h3><ul>
+<h3 id="3.11-test_nd_performance">3.11 test_nd_performance<a class="anchor-link" href="#3.11-test_nd_performance">&#182;</a></h3><ul>
 <li>Validate neighbour discovery table capacity and learning rate</li>
 </ul>
-<h3 id="test_ipv6_source_address_restrain_forwarding">test_ipv6_source_address_restrain_forwarding<a class="anchor-link" href="#test_ipv6_source_address_restrain_forwarding">&#182;</a></h3><ul>
+<h3 id="3.12-test_ipv6_source_address_restrain_forwarding">3.12 test_ipv6_source_address_restrain_forwarding<a class="anchor-link" href="#3.12-test_ipv6_source_address_restrain_forwarding">&#182;</a></h3><ul>
 <li>Validate IPv6 protocol status between DUTs when static route is configured.</li>
 </ul>
-<h3 id="test_ipv6_source_address_selection">test_ipv6_source_address_selection<a class="anchor-link" href="#test_ipv6_source_address_selection">&#182;</a></h3><ul>
+<h3 id="3.13-test_ipv6_source_address_selection">3.13 test_ipv6_source_address_selection<a class="anchor-link" href="#3.13-test_ipv6_source_address_selection">&#182;</a></h3><ul>
 <li>Validate address selection, when address is specified, if not specified, address should take the longest match.</li>
 </ul>
-<h3 id="test_ipv6_static_route">test_ipv6_static_route<a class="anchor-link" href="#test_ipv6_static_route">&#182;</a></h3><ul>
+<h3 id="3.14-test_ipv6_static_route">3.14 test_ipv6_static_route<a class="anchor-link" href="#3.14-test_ipv6_static_route">&#182;</a></h3><ul>
 <li>Validate features of static route such as longest match, black hole route, route policy matching etc</li>
 </ul>
-<h3 id="test_ipv6_traffic_bgp">test_ipv6_traffic_bgp<a class="anchor-link" href="#test_ipv6_traffic_bgp">&#182;</a></h3><ul>
+<h3 id="3.15-test_ipv6_traffic_bgp">3.15 test_ipv6_traffic_bgp<a class="anchor-link" href="#3.15-test_ipv6_traffic_bgp">&#182;</a></h3><ul>
 <li>Validate IPv6 message send/receive during large traffic forwarding</li>
 </ul>
-<h3 id="test_ipv6_with_multiple_address_prefix">test_ipv6_with_multiple_address_prefix<a class="anchor-link" href="#test_ipv6_with_multiple_address_prefix">&#182;</a></h3><ul>
+<h3 id="3.16-test_ipv6_with_multiple_address_prefix">3.16 test_ipv6_with_multiple_address_prefix<a class="anchor-link" href="#3.16-test_ipv6_with_multiple_address_prefix">&#182;</a></h3><ul>
 <li>Validate IPv6 address config with mask 10-bit, 48-bit, 53-bit, 58-bit, 64-bit, 92-bit and 127-bit.</li>
 </ul>
-<h3 id="test_ipv6_with_protocol_down_and_l3_interface">test_ipv6_with_protocol_down_and_l3_interface<a class="anchor-link" href="#test_ipv6_with_protocol_down_and_l3_interface">&#182;</a></h3><ul>
+<h3 id="3.17-test_ipv6_with_protocol_down_and_l3_interface">3.17 test_ipv6_with_protocol_down_and_l3_interface<a class="anchor-link" href="#3.17-test_ipv6_with_protocol_down_and_l3_interface">&#182;</a></h3><ul>
 <li>Validate IPv6 static route between DUTs and verify ICMPv6 communication.</li>
 </ul>
-<h3 id="test_ipv6_with_second_ip">test_ipv6_with_second_ip<a class="anchor-link" href="#test_ipv6_with_second_ip">&#182;</a></h3><ul>
+<h3 id="3.18-test_ipv6_with_second_ip">3.18 test_ipv6_with_second_ip<a class="anchor-link" href="#3.18-test_ipv6_with_second_ip">&#182;</a></h3><ul>
 <li>Validate multiple IPv6 address configuration</li>
 </ul>
 
@@ -14767,17 +14753,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="L2-Feature-Tests">L2 Feature Tests<a class="anchor-link" href="#L2-Feature-Tests">&#182;</a></h2><h3 id="test_l2_port_mtu_settings">test_l2_port_mtu_settings<a class="anchor-link" href="#test_l2_port_mtu_settings">&#182;</a></h3><ul>
+<h2 id="4.-L2-Feature-Tests">4. L2 Feature Tests<a class="anchor-link" href="#4.-L2-Feature-Tests">&#182;</a></h2><h3 id="4.1-test_l2_port_mtu_settings">4.1 test_l2_port_mtu_settings<a class="anchor-link" href="#4.1-test_l2_port_mtu_settings">&#182;</a></h3><ul>
 <li>Validate different MTU values for port</li>
 </ul>
-<h3 id="test_l2_port_speed_fec">test_l2_port_speed_fec<a class="anchor-link" href="#test_l2_port_speed_fec">&#182;</a></h3><ul>
+<h3 id="4.2-test_l2_port_speed_fec">4.2 test_l2_port_speed_fec<a class="anchor-link" href="#4.2-test_l2_port_speed_fec">&#182;</a></h3><ul>
 <li>Validate port FEC on/off and port speed change</li>
 </ul>
-<h3 id="test_l2_port_statistics">test_l2_port_statistics<a class="anchor-link" href="#test_l2_port_statistics">&#182;</a></h3><ul>
+<h3 id="4.3-test_l2_port_statistics">4.3 test_l2_port_statistics<a class="anchor-link" href="#4.3-test_l2_port_statistics">&#182;</a></h3><ul>
 <li>Validate traffic with different frame sizes</li>
 </ul>
-<h3 id="test_l2_port_up_down">test_l2_port_up_down<a class="anchor-link" href="#test_l2_port_up_down">&#182;</a></h3><ul>
-<li>Validate physical port up and down and status change.</li>
+<h3 id="4.4-test_l2_port_up_down">4.4 test_l2_port_up_down<a class="anchor-link" href="#4.4-test_l2_port_up_down">&#182;</a></h3><ul>
+<li>Validate physical port up and down and status change</li>
 </ul>
 
 </div>
@@ -14790,7 +14776,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="RFC-Tests">RFC Tests<a class="anchor-link" href="#RFC-Tests">&#182;</a></h2><h3 id="test_RFC2544">test_RFC2544<a class="anchor-link" href="#test_RFC2544">&#182;</a></h3><ul>
+<h2 id="5.-RFC-Tests">5. RFC Tests<a class="anchor-link" href="#5.-RFC-Tests">&#182;</a></h2><h3 id="5.1-test_RFC2544">5.1 test_RFC2544<a class="anchor-link" href="#5.1-test_RFC2544">&#182;</a></h3><ul>
 <li>Covers RFC2544 validation</li>
 </ul>
 
@@ -14804,7 +14790,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="QOS-Tests:">QOS Tests:<a class="anchor-link" href="#QOS-Tests:">&#182;</a></h2><h3 id="test_qos">test_qos<a class="anchor-link" href="#test_qos">&#182;</a></h3><ul>
+<h2 id="6.-QOS-Tests:">6. QOS Tests:<a class="anchor-link" href="#6.-QOS-Tests:">&#182;</a></h2><h3 id="6.1-test_qos">6.1 test_qos<a class="anchor-link" href="#6.1-test_qos">&#182;</a></h3><ul>
 <li>Validate QOS params and verify traffic flow</li>
 </ul>
 
@@ -14818,19 +14804,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="VLAN-Feature-Tests:">VLAN Feature Tests:<a class="anchor-link" href="#VLAN-Feature-Tests:">&#182;</a></h2><h3 id="test_vlan_performance">test_vlan_performance<a class="anchor-link" href="#test_vlan_performance">&#182;</a></h3><ul>
+<h2 id="7.-VLAN-Feature-Tests:">7. VLAN Feature Tests:<a class="anchor-link" href="#7.-VLAN-Feature-Tests:">&#182;</a></h2><h3 id="7.1-test_vlan_performance">7.1 test_vlan_performance<a class="anchor-link" href="#7.1-test_vlan_performance">&#182;</a></h3><ul>
 <li>Validate creation of multiple tagged VLANs and traffic verification of tagged VLANs</li>
 </ul>
-<h3 id="test_l3_vlan_settings">test_l3_vlan_settings<a class="anchor-link" href="#test_l3_vlan_settings">&#182;</a></h3><ul>
+<h3 id="7.2-test_l3_vlan_settings">7.2 test_l3_vlan_settings<a class="anchor-link" href="#7.2-test_l3_vlan_settings">&#182;</a></h3><ul>
 <li>Validate untagged VLAN creation and MTU settings for VLAN interface.</li>
 </ul>
-<h3 id="test_l3_vlan_performance">test_l3_vlan_performance<a class="anchor-link" href="#test_l3_vlan_performance">&#182;</a></h3><ul>
+<h3 id="7.3-test_l3_vlan_performance">7.3 test_l3_vlan_performance<a class="anchor-link" href="#7.3-test_l3_vlan_performance">&#182;</a></h3><ul>
 <li>Verify the number of secondary IP addresses under VLAN interface.</li>
 </ul>
-<h3 id="test_l2_vlan_settings">test_l2_vlan_settings<a class="anchor-link" href="#test_l2_vlan_settings">&#182;</a></h3><ul>
+<h3 id="7.4-test_l2_vlan_settings">7.4 test_l2_vlan_settings<a class="anchor-link" href="#7.4-test_l2_vlan_settings">&#182;</a></h3><ul>
 <li>Validate port VLAN join/exit operations and VLAN create/delete operations.</li>
 </ul>
-<h3 id="test_ipv6_with_protocol_down_and_vlan_interface">test_ipv6_with_protocol_down_and_vlan_interface<a class="anchor-link" href="#test_ipv6_with_protocol_down_and_vlan_interface">&#182;</a></h3><ul>
+<h3 id="7.5-test_ipv6_with_protocol_down_and_vlan_interface">7.5 test_ipv6_with_protocol_down_and_vlan_interface<a class="anchor-link" href="#7.5-test_ipv6_with_protocol_down_and_vlan_interface">&#182;</a></h3><ul>
 <li>Create IPv6 static route between DUTs and create VLAN between DUT and tester and validate ICMPv6 communication</li>
 </ul>
 
@@ -14844,7 +14830,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ACL-Feature-Tests:">ACL Feature Tests:<a class="anchor-link" href="#ACL-Feature-Tests:">&#182;</a></h2><h3 id="test_acl_performance">test_acl_performance<a class="anchor-link" href="#test_acl_performance">&#182;</a></h3><ul>
+<h2 id="8.-ACL-Feature-Tests:">8. ACL Feature Tests:<a class="anchor-link" href="#8.-ACL-Feature-Tests:">&#182;</a></h2><h3 id="8.1-test_acl_performance">8.1 test_acl_performance<a class="anchor-link" href="#8.1-test_acl_performance">&#182;</a></h3><ul>
 <li>Validation of simple/complex ACL inbound and outbound directions</li>
 </ul>
 
@@ -14858,25 +14844,25 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="ARP-Feature-Tests:">ARP Feature Tests:<a class="anchor-link" href="#ARP-Feature-Tests:">&#182;</a></h2><h3 id="test_arp_performance">test_arp_performance<a class="anchor-link" href="#test_arp_performance">&#182;</a></h3><ul>
+<h2 id="9.-ARP-Feature-Tests:">9. ARP Feature Tests:<a class="anchor-link" href="#9.-ARP-Feature-Tests:">&#182;</a></h2><h3 id="9.1-test_arp_performance">9.1 test_arp_performance<a class="anchor-link" href="#9.1-test_arp_performance">&#182;</a></h3><ul>
 <li>Validate ARP table capacity and learning rate</li>
 </ul>
-<h3 id="test_arp_proxy">test_arp_proxy<a class="anchor-link" href="#test_arp_proxy">&#182;</a></h3><ul>
+<h3 id="9.2-test_arp_proxy">9.2 test_arp_proxy<a class="anchor-link" href="#9.2-test_arp_proxy">&#182;</a></h3><ul>
 <li>Validate ARP resolve between DUTs</li>
 </ul>
-<h3 id="test_l3_vlan_performance">test_l3_vlan_performance<a class="anchor-link" href="#test_l3_vlan_performance">&#182;</a></h3><ul>
+<h3 id="9.3-test_l3_vlan_performance">9.3 test_l3_vlan_performance<a class="anchor-link" href="#9.3-test_l3_vlan_performance">&#182;</a></h3><ul>
 <li>Verify the number of secondary IP addresses under VLAN interface.</li>
 </ul>
-<h3 id="test_l2_vlan_settings">test_l2_vlan_settings<a class="anchor-link" href="#test_l2_vlan_settings">&#182;</a></h3><ul>
+<h3 id="9.4-test_l2_vlan_settings">9.4 test_l2_vlan_settings<a class="anchor-link" href="#9.4-test_l2_vlan_settings">&#182;</a></h3><ul>
 <li>Validate port VLAN join/exit operations and VLAN create/delete operations.</li>
 </ul>
-<h3 id="test_ipv6_with_protocol_down_and_vlan_interface">test_ipv6_with_protocol_down_and_vlan_interface<a class="anchor-link" href="#test_ipv6_with_protocol_down_and_vlan_interface">&#182;</a></h3><ul>
+<h3 id="9.5-test_ipv6_with_protocol_down_and_vlan_interface">9.5 test_ipv6_with_protocol_down_and_vlan_interface<a class="anchor-link" href="#9.5-test_ipv6_with_protocol_down_and_vlan_interface">&#182;</a></h3><ul>
 <li>Create IPv6 static route between DUTs and create VLAN between DUT and tester and validate ICMPv6 communication</li>
 </ul>
-<h3 id="test_ipv4_l3_arp">test_ipv4_l3_arp<a class="anchor-link" href="#test_ipv4_l3_arp">&#182;</a></h3><ul>
+<h3 id="9.6-test_ipv4_l3_arp">9.6 test_ipv4_l3_arp<a class="anchor-link" href="#9.6-test_ipv4_l3_arp">&#182;</a></h3><ul>
 <li>Validate ARP between traffic generator and DUT, when IPv4 raw traffic item configured</li>
 </ul>
-<h3 id="test_mac_performance">test_mac_performance<a class="anchor-link" href="#test_mac_performance">&#182;</a></h3><ul>
+<h3 id="9.7-test_mac_performance">9.7 test_mac_performance<a class="anchor-link" href="#9.7-test_mac_performance">&#182;</a></h3><ul>
 <li>Validate the MAC learning and learning rate</li>
 </ul>
 
@@ -14890,28 +14876,28 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="DUAL-STACK-Feature-Tests:">DUAL-STACK Feature Tests:<a class="anchor-link" href="#DUAL-STACK-Feature-Tests:">&#182;</a></h2><h3 id="test_ipv4_ipv6_err_frame_processing">test_ipv4_ipv6_err_frame_processing<a class="anchor-link" href="#test_ipv4_ipv6_err_frame_processing">&#182;</a></h3><ul>
+<h2 id="10.-DUAL-STACK-Feature-Tests:">10. DUAL-STACK Feature Tests:<a class="anchor-link" href="#10.-DUAL-STACK-Feature-Tests:">&#182;</a></h2><h3 id="10.1-test_ipv4_ipv6_err_frame_processing">10.1 test_ipv4_ipv6_err_frame_processing<a class="anchor-link" href="#10.1-test_ipv4_ipv6_err_frame_processing">&#182;</a></h3><ul>
 <li>Validate CRC error and wrong frame length processing when both IPv4 and IPv6 stacks are created.</li>
 </ul>
-<h3 id="test_ipv4_ipv6_l2_msg">test_ipv4_ipv6_l2_msg<a class="anchor-link" href="#test_ipv4_ipv6_l2_msg">&#182;</a></h3><ul>
+<h3 id="10.2-test_ipv4_ipv6_l2_msg">10.2 test_ipv4_ipv6_l2_msg<a class="anchor-link" href="#10.2-test_ipv4_ipv6_l2_msg">&#182;</a></h3><ul>
 <li>Validate ARP resolve between DUTs</li>
 </ul>
-<h3 id="test_ipv4_ipv6_maxip">test_ipv4_ipv6_maxip<a class="anchor-link" href="#test_ipv4_ipv6_maxip">&#182;</a></h3><ul>
+<h3 id="10.3-test_ipv4_ipv6_maxip">10.3 test_ipv4_ipv6_maxip<a class="anchor-link" href="#10.3-test_ipv4_ipv6_maxip">&#182;</a></h3><ul>
 <li>Validate multiple IPv4 and IPv6 address on a single interface</li>
 </ul>
-<h3 id="test_ipv4_ipv6_rfc2544">test_ipv4_ipv6_rfc2544<a class="anchor-link" href="#test_ipv4_ipv6_rfc2544">&#182;</a></h3><ul>
+<h3 id="10.4-test_ipv4_ipv6_rfc2544">10.4 test_ipv4_ipv6_rfc2544<a class="anchor-link" href="#10.4-test_ipv4_ipv6_rfc2544">&#182;</a></h3><ul>
 <li>Validate throughput/latency/packet loss percentage using dual stack</li>
 </ul>
-<h3 id="test_ipv4_ipv6_route_forwarding">test_ipv4_ipv6_route_forwarding<a class="anchor-link" href="#test_ipv4_ipv6_route_forwarding">&#182;</a></h3><ul>
+<h3 id="10.5-test_ipv4_ipv6_route_forwarding">10.5 test_ipv4_ipv6_route_forwarding<a class="anchor-link" href="#10.5-test_ipv4_ipv6_route_forwarding">&#182;</a></h3><ul>
 <li>Validate default route forwarding to ensure IPv4 and IPv6 resource capability.</li>
 </ul>
-<h3 id="test_ipv4_ipv6_with_aggregation_interface">test_ipv4_ipv6_with_aggregation_interface<a class="anchor-link" href="#test_ipv4_ipv6_with_aggregation_interface">&#182;</a></h3><ul>
+<h3 id="10.6-test_ipv4_ipv6_with_aggregation_interface">10.6 test_ipv4_ipv6_with_aggregation_interface<a class="anchor-link" href="#10.6-test_ipv4_ipv6_with_aggregation_interface">&#182;</a></h3><ul>
 <li>Validate IPv4 and IPv6 communication over aggregated interfaces.</li>
 </ul>
-<h3 id="test_ipv4_ipv6_with_l3_interface">test_ipv4_ipv6_with_l3_interface<a class="anchor-link" href="#test_ipv4_ipv6_with_l3_interface">&#182;</a></h3><ul>
+<h3 id="10.7-test_ipv4_ipv6_with_l3_interface">10.7 test_ipv4_ipv6_with_l3_interface<a class="anchor-link" href="#10.7-test_ipv4_ipv6_with_l3_interface">&#182;</a></h3><ul>
 <li>Validate ping between tester and DUT when dual stack created</li>
 </ul>
-<h3 id="test_ipv4_ipv6_with_vlan_interface">test_ipv4_ipv6_with_vlan_interface<a class="anchor-link" href="#test_ipv4_ipv6_with_vlan_interface">&#182;</a></h3><ul>
+<h3 id="10.8-test_ipv4_ipv6_with_vlan_interface">10.8 test_ipv4_ipv6_with_vlan_interface<a class="anchor-link" href="#10.8-test_ipv4_ipv6_with_vlan_interface">&#182;</a></h3><ul>
 <li>Validate IPv4 and IPv6 communication over VLAN interfaces.</li>
 </ul>
 
@@ -14925,34 +14911,34 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="BGP-Feature-Tests">BGP Feature Tests<a class="anchor-link" href="#BGP-Feature-Tests">&#182;</a></h2><h3 id="test_bgp_ecmp_convergence_speed">test_bgp_ecmp_convergence_speed<a class="anchor-link" href="#test_bgp_ecmp_convergence_speed">&#182;</a></h3><ul>
+<h2 id="11.-BGP-Feature-Tests">11. BGP Feature Tests<a class="anchor-link" href="#11.-BGP-Feature-Tests">&#182;</a></h2><h3 id="11.1-test_bgp_ecmp_convergence_speed">11.1 test_bgp_ecmp_convergence_speed<a class="anchor-link" href="#11.1-test_bgp_ecmp_convergence_speed">&#182;</a></h3><ul>
 <li>Validate BGP convergence when equal-cost multipath (ECMP) is configured.</li>
 </ul>
-<h3 id="test_bgp_ecmp_flap">test_bgp_ecmp_flap<a class="anchor-link" href="#test_bgp_ecmp_flap">&#182;</a></h3><ul>
+<h3 id="11.2-test_bgp_ecmp_flap">11.2 test_bgp_ecmp_flap<a class="anchor-link" href="#11.2-test_bgp_ecmp_flap">&#182;</a></h3><ul>
 <li>Validate route flap detection when equal-cost multipath (ECMP) is configured.</li>
 </ul>
-<h3 id="test_bgp_functions">test_bgp_functions<a class="anchor-link" href="#test_bgp_functions">&#182;</a></h3><ul>
+<h3 id="11.3-test_bgp_functions">11.3 test_bgp_functions<a class="anchor-link" href="#11.3-test_bgp_functions">&#182;</a></h3><ul>
 <li>Validate BGP functions such as, neighbour establishment, route-update, route-forward and community attribute etc</li>
 </ul>
-<h3 id="test_bgp_neighbor_number_flip_performance">test_bgp_neighbor_number_flip_performance<a class="anchor-link" href="#test_bgp_neighbor_number_flip_performance">&#182;</a></h3><ul>
+<h3 id="11.4-test_bgp_neighbor_number_flip_performance">11.4 test_bgp_neighbor_number_flip_performance<a class="anchor-link" href="#11.4-test_bgp_neighbor_number_flip_performance">&#182;</a></h3><ul>
 <li>Validate BGP performance with multiple neighbours and network addresses</li>
 </ul>
-<h3 id="test_bgp_pressure_ecmp">test_bgp_pressure_ecmp<a class="anchor-link" href="#test_bgp_pressure_ecmp">&#182;</a></h3><ul>
+<h3 id="11.5-test_bgp_pressure_ecmp">11.5 test_bgp_pressure_ecmp<a class="anchor-link" href="#11.5-test_bgp_pressure_ecmp">&#182;</a></h3><ul>
 <li>Validate traffic loss when equal-cost multipath (ECMP) is configured.</li>
 </ul>
-<h3 id="test_bgp_pressure_general">test_bgp_pressure_general<a class="anchor-link" href="#test_bgp_pressure_general">&#182;</a></h3><ul>
+<h3 id="11.6-test_bgp_pressure_general">11.6 test_bgp_pressure_general<a class="anchor-link" href="#11.6-test_bgp_pressure_general">&#182;</a></h3><ul>
 <li>Validate BGP neighbour stability and port stability during ARP pressure</li>
 </ul>
-<h3 id="test_bgp_route_flap">test_bgp_route_flap<a class="anchor-link" href="#test_bgp_route_flap">&#182;</a></h3><ul>
+<h3 id="11.7-test_bgp_route_flap">11.7 test_bgp_route_flap<a class="anchor-link" href="#11.7-test_bgp_route_flap">&#182;</a></h3><ul>
 <li>Validate BGP route flapping test</li>
 </ul>
-<h3 id="test_ebgp_convergence_speed">test_ebgp_convergence_speed<a class="anchor-link" href="#test_ebgp_convergence_speed">&#182;</a></h3><ul>
+<h3 id="11.8-test_ebgp_convergence_speed">11.8 test_ebgp_convergence_speed<a class="anchor-link" href="#11.8-test_ebgp_convergence_speed">&#182;</a></h3><ul>
 <li>Test to verify the BGP route convergence</li>
 </ul>
-<h3 id="test_ebgp_high_capacity_routing">test_ebgp_high_capacity_routing<a class="anchor-link" href="#test_ebgp_high_capacity_routing">&#182;</a></h3><ul>
+<h3 id="11.9-test_ebgp_high_capacity_routing">11.9 test_ebgp_high_capacity_routing<a class="anchor-link" href="#11.9-test_ebgp_high_capacity_routing">&#182;</a></h3><ul>
 <li>Validate high capacity routing convergence speed between DUTs</li>
 </ul>
-<h3 id="test_ecmp_table_specs">test_ecmp_table_specs<a class="anchor-link" href="#test_ecmp_table_specs">&#182;</a></h3><ul>
+<h3 id="11.10-test_ecmp_table_specs">11.10 test_ecmp_table_specs<a class="anchor-link" href="#11.10-test_ecmp_table_specs">&#182;</a></h3><ul>
 <li>Validate Tx/Rx packet counters are well within range between DUTs</li>
 </ul>
 
@@ -14966,13 +14952,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="FDB-tests">FDB tests<a class="anchor-link" href="#FDB-tests">&#182;</a></h2><h3 id="test_acl_performance">test_acl_performance<a class="anchor-link" href="#test_acl_performance">&#182;</a></h3><ul>
+<h2 id="12.-FDB-tests">12. FDB tests<a class="anchor-link" href="#12.-FDB-tests">&#182;</a></h2><h3 id="12.1-test_acl_performance">12.1 test_acl_performance<a class="anchor-link" href="#12.1-test_acl_performance">&#182;</a></h3><ul>
 <li>Validation of FDB related functions such as manual deletion, ageing and MAC static entry</li>
 </ul>
-<h3 id="test_fib4_performance">test_fib4_performance<a class="anchor-link" href="#test_fib4_performance">&#182;</a></h3><ul>
+<h3 id="12.2-test_fib4_performance">12.2 test_fib4_performance<a class="anchor-link" href="#12.2-test_fib4_performance">&#182;</a></h3><ul>
 <li>Validate FDB functions with IPv4 address configured between tester and DUT</li>
 </ul>
-<h3 id="test_fib6_performance">test_fib6_performance<a class="anchor-link" href="#test_fib6_performance">&#182;</a></h3><ul>
+<h3 id="12.3-test_fib6_performance">12.3 test_fib6_performance<a class="anchor-link" href="#12.3-test_fib6_performance">&#182;</a></h3><ul>
 <li>Validate FDB functions with IPv6 address configured between tester and DUT</li>
 </ul>
 
@@ -14986,7 +14972,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="LACP-Feature-Tests">LACP Feature Tests<a class="anchor-link" href="#LACP-Feature-Tests">&#182;</a></h2><h3 id="test_lacp">test_lacp<a class="anchor-link" href="#test_lacp">&#182;</a></h3><ul>
+<h2 id="13.-LACP-Feature-Tests">13. LACP Feature Tests<a class="anchor-link" href="#13.-LACP-Feature-Tests">&#182;</a></h2><h3 id="13.1-test_lacp">13.1 test_lacp<a class="anchor-link" href="#13.1-test_lacp">&#182;</a></h3><ul>
 <li>Validation of connectivity from tester to DUT via LAG ports over VLAN</li>
 </ul>
 
@@ -15000,13 +14986,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Port-Related-Tests">Port Related Tests<a class="anchor-link" href="#Port-Related-Tests">&#182;</a></h2><h3 id="test_mirroring_function">test_mirroring_function<a class="anchor-link" href="#test_mirroring_function">&#182;</a></h3><ul>
+<h2 id="14.-Port-Related-Tests">14. Port Related Tests<a class="anchor-link" href="#14.-Port-Related-Tests">&#182;</a></h2><h3 id="14.1-test_mirroring_function">14.1 test_mirroring_function<a class="anchor-link" href="#14.1-test_mirroring_function">&#182;</a></h3><ul>
 <li>Validate port mirroring and stream mirroring</li>
 </ul>
-<h3 id="test_link_delay">test_link_delay<a class="anchor-link" href="#test_link_delay">&#182;</a></h3><ul>
+<h3 id="14.2-test_link_delay">14.2 test_link_delay<a class="anchor-link" href="#14.2-test_link_delay">&#182;</a></h3><ul>
 <li>Validate the link delay and verify traffic</li>
 </ul>
-<h3 id="test_port_buffer">test_port_buffer<a class="anchor-link" href="#test_port_buffer">&#182;</a></h3><ul>
+<h3 id="14.3-test_port_buffer">14.3 test_port_buffer<a class="anchor-link" href="#14.3-test_port_buffer">&#182;</a></h3><ul>
 <li>Verification of port buffers</li>
 </ul>
 
@@ -15020,10 +15006,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="VOQ/VRF-Tests">VOQ/VRF Tests<a class="anchor-link" href="#VOQ/VRF-Tests">&#182;</a></h2><h3 id="test_voq_imix">test_voq_imix<a class="anchor-link" href="#test_voq_imix">&#182;</a></h3><ul>
+<h2 id="15.-VOQ/VRF-Tests">15. VOQ/VRF Tests<a class="anchor-link" href="#15.-VOQ/VRF-Tests">&#182;</a></h2><h3 id="15.1-test_voq_imix">15.1 test_voq_imix<a class="anchor-link" href="#15.1-test_voq_imix">&#182;</a></h3><ul>
 <li>Validate Virtual Output Queueing (VOQ) between tester and DUT</li>
 </ul>
-<h3 id="test_vrf_functions">test_vrf_functions<a class="anchor-link" href="#test_vrf_functions">&#182;</a></h3><ul>
+<h3 id="15.2-test_vrf_functions">15.2 test_vrf_functions<a class="anchor-link" href="#15.2-test_vrf_functions">&#182;</a></h3><ul>
 <li>Validate Virtual Routing and Forwarding (VRF) under DUT</li>
 </ul>
 

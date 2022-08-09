@@ -3,34 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TestScenarioCoverage</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script>
-(function() {
-  function addWidgetsRenderer() {
-    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
-    var scriptElement = document.createElement('script');
-    
-    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
-    
-    var widgetState;
-
-    // Fallback for older version:
-    try {
-      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
-
-      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
-        
-        var widgetRendererSrc = 'https://unpkg.com/@jupyter-js-widgets@*/dist/embed.js';
-        
-      }
-    } catch(e) {}
-
-    scriptElement.src = widgetRendererSrc;
-    document.body.appendChild(scriptElement);
-  }
-
-  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
-}());
-</script>
+<title>README</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14606,8 +14579,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><h1>Test Scenario Coverage<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#-Test-Scenarios-" data-toc-modified-id="-Test-Scenarios--1"> Test Scenarios </a></span><ul class="toc-item"><li><span><a href="#-1.-Ipv4:-" data-toc-modified-id="-1.-Ipv4:--1.1"> 1. Ipv4: </a></span><ul class="toc-item"><li><span><a href="#-1.1-Pressure-Test:-ARP-request/reply/free-ARP-" data-toc-modified-id="-1.1-Pressure-Test:-ARP-request/reply/free-ARP--1.1.1"> 1.1 Pressure Test: ARP request/reply/free ARP </a></span></li><li><span><a href="#-1.2-Error-frame-processing-" data-toc-modified-id="-1.2-Error-frame-processing--1.1.2"> 1.2 Error frame processing </a></span></li><li><span><a href="#-1.3-Configure-single/multiple-ipv4-addresses-when-the-interface-state-is-down/up-and-verify-the-configured-IP-address-if-reflecting-" data-toc-modified-id="-1.3-Configure-single/multiple-ipv4-addresses-when-the-interface-state-is-down/up-and-verify-the-configured-IP-address-if-reflecting--1.1.3"> 1.3 Configure single/multiple ipv4 addresses when the interface state is down/up and verify the configured IP address if reflecting </a></span></li><li><span><a href="#-1.4-Static-routing-" data-toc-modified-id="-1.4-Static-routing--1.1.4"> 1.4 Static routing </a></span></li></ul></li><li><span><a href="#-2-Ipv6:-" data-toc-modified-id="-2-Ipv6:--1.2"> 2 Ipv6: </a></span><ul class="toc-item"><li><span><a href="#2.1-Verify-reception-of-packets-of-various-sizes-with-ipv6-address." data-toc-modified-id="2.1-Verify-reception-of-packets-of-various-sizes-with-ipv6-address.-1.2.1">2.1 Verify reception of packets of various sizes with ipv6 address.</a></span></li><li><span><a href="#2.2-Verify-packet-reception-with-HopLimit-of-0-and-1.-If-it-is-forwarding,-as-long-as-the-HopLimit-is-0-or-1,-it-cannot-be-forwarded." data-toc-modified-id="2.2-Verify-packet-reception-with-HopLimit-of-0-and-1.-If-it-is-forwarding,-as-long-as-the-HopLimit-is-0-or-1,-it-cannot-be-forwarded.-1.2.2">2.2 Verify packet reception with HopLimit of 0 and 1. If it is forwarding, as long as the HopLimit is 0 or 1, it cannot be forwarded.</a></span></li><li><span><a href="#2.3-Configure-the-ipv6-address-on-the-Layer-3-port-in-the-up/down-state" data-toc-modified-id="2.3-Configure-the-ipv6-address-on-the-Layer-3-port-in-the-up/down-state-1.2.3">2.3 Configure the ipv6 address on the Layer 3 port in the up/down state</a></span></li><li><span><a href="#2.4-Configure-8-bit,-16-bit,-24-bit,-26-bit,-31-bit-ipv6-addresses-on-the-Layer-3-port-in-the-upstate." data-toc-modified-id="2.4-Configure-8-bit,-16-bit,-24-bit,-26-bit,-31-bit-ipv6-addresses-on-the-Layer-3-port-in-the-upstate.-1.2.4">2.4 Configure 8-bit, 16-bit, 24-bit, 26-bit, 31-bit ipv6 addresses on the Layer 3 port in the upstate.</a></span></li><li><span><a href="#2.5-aggregation-port" data-toc-modified-id="2.5-aggregation-port-1.2.5">2.5 aggregation port</a></span></li><li><span><a href="#2.6-packet-tx-when-dest-is-a-local-host" data-toc-modified-id="2.6-packet-tx-when-dest-is-a-local-host-1.2.6">2.6 packet tx when dest is a local host</a></span></li><li><span><a href="#2.7-Neighbour-Discovery:" data-toc-modified-id="2.7-Neighbour-Discovery:-1.2.7">2.7 Neighbour Discovery:</a></span><ul class="toc-item"><li><span><a href="#2.7.1-64-bit-nd-converting-route" data-toc-modified-id="2.7.1-64-bit-nd-converting-route-1.2.7.1">2.7.1 64-bit nd converting route</a></span></li><li><span><a href="#2.7.2-on-a-single-interface" data-toc-modified-id="2.7.2-on-a-single-interface-1.2.7.2">2.7.2 on a single interface</a></span></li><li><span><a href="#2.7.3-discovery-globally" data-toc-modified-id="2.7.3-discovery-globally-1.2.7.3">2.7.3 discovery globally</a></span></li><li><span><a href="#2.7.4-ND-table-items-aging-and-delete" data-toc-modified-id="2.7.4-ND-table-items-aging-and-delete-1.2.7.4">2.7.4 ND table items aging and delete</a></span></li><li><span><a href="#2.7.5-ND-table-capacity-and-the-learning-speed-test" data-toc-modified-id="2.7.5-ND-table-capacity-and-the-learning-speed-test-1.2.7.5">2.7.5 ND table capacity and the learning speed test</a></span></li><li><span><a href="#2.7.6-resource-capability-test" data-toc-modified-id="2.7.6-resource-capability-test-1.2.7.6">2.7.6 resource capability test</a></span></li></ul></li><li><span><a href="#2.8-source-address-selection:" data-toc-modified-id="2.8-source-address-selection:-1.2.8">2.8 source address selection:</a></span><ul class="toc-item"><li><span><a href="#2.8.1-specify-source-address-in-an-application" data-toc-modified-id="2.8.1-specify-source-address-in-an-application-1.2.8.1">2.8.1 specify source address in an application</a></span></li><li><span><a href="#2.8.2-When-the-source-address-is-not-specified,-the-source-address-with-the-longest-matching" data-toc-modified-id="2.8.2-When-the-source-address-is-not-specified,-the-source-address-with-the-longest-matching-1.2.8.2">2.8.2 When the source address is not specified, the source address with the longest matching</a></span></li><li><span><a href="#2.8.3-prefix-on-the-interface-is-selected-according-to-the-destination-address" data-toc-modified-id="2.8.3-prefix-on-the-interface-is-selected-according-to-the-destination-address-1.2.8.3">2.8.3 prefix on the interface is selected according to the destination address</a></span></li><li><span><a href="#2.8.4-Active-TX,-reply,-trigger-error-message,-also-in-line-with-the-longest-matching-principle" data-toc-modified-id="2.8.4-Active-TX,-reply,-trigger-error-message,-also-in-line-with-the-longest-matching-principle-1.2.8.4">2.8.4 Active TX, reply, trigger error message, also in line with the longest matching principle</a></span></li><li><span><a href="#2.8.5-anycast-address-cannot-be-the-source-address" data-toc-modified-id="2.8.5-anycast-address-cannot-be-the-source-address-1.2.8.5">2.8.5 anycast address cannot be the source address</a></span></li></ul></li><li><span><a href="#2.9-static-route" data-toc-modified-id="2.9-static-route-1.2.9">2.9 static route</a></span><ul class="toc-item"><li><span><a href="#2.9.1-The-difference-between-applying-configuration-before-receiving-routes-and-after-receiving-routes" data-toc-modified-id="2.9.1-The-difference-between-applying-configuration-before-receiving-routes-and-after-receiving-routes-1.2.9.1">2.9.1 The difference between applying configuration before receiving routes and after receiving routes</a></span></li><li><span><a href="#2.9.2-Delete-the-table-item-when-the-traffic-hit" data-toc-modified-id="2.9.2-Delete-the-table-item-when-the-traffic-hit-1.2.9.2">2.9.2 Delete the table item when the traffic hit</a></span></li><li><span><a href="#2.9.3-Support-configuration-of-description,-tag-(for-routing-policy-matching),-and-distance-protocol-metrics-(for-priority-comparison-of-different-routing-protocols)" data-toc-modified-id="2.9.3-Support-configuration-of-description,-tag-(for-routing-policy-matching),-and-distance-protocol-metrics-(for-priority-comparison-of-different-routing-protocols)-1.2.9.3">2.9.3 Support configuration of description, tag (for routing policy matching), and distance protocol metrics (for priority comparison of different routing protocols)</a></span></li><li><span><a href="#2.9.4-Support-to-configure-next-hop-as-a-null-interface----black-hole-routing" data-toc-modified-id="2.9.4-Support-to-configure-next-hop-as-a-null-interface----black-hole-routing-1.2.9.4">2.9.4 Support to configure next hop as a null interface -- black hole routing</a></span></li><li><span><a href="#2.9.5-Support-the-longest-matching" data-toc-modified-id="2.9.5-Support-the-longest-matching-1.2.9.5">2.9.5 Support the longest matching</a></span></li><li><span><a href="#2.9.6-Verify-large-traffic-forwarding,-address-resolution-and-protocol-message-sending-and-receiving" data-toc-modified-id="2.9.6-Verify-large-traffic-forwarding,-address-resolution-and-protocol-message-sending-and-receiving-1.2.9.6">2.9.6 Verify large traffic forwarding, address resolution and protocol message sending and receiving</a></span></li></ul></li></ul></li><li><span><a href="#-3.-Dual-Stack:-" data-toc-modified-id="-3.-Dual-Stack:--1.3"> 3. Dual-Stack: </a></span><ul class="toc-item"><li><span><a href="#3.1-Configure-ipv4-and-ipv6-addresses-between-DUT-and-TGEN-and-verify-whether-the-interface-is-upstate-or-not." data-toc-modified-id="3.1-Configure-ipv4-and-ipv6-addresses-between-DUT-and-TGEN-and-verify-whether-the-interface-is-upstate-or-not.-1.3.1">3.1 Configure ipv4 and ipv6 addresses between DUT and TGEN and verify whether the interface is upstate or not.</a></span></li><li><span><a href="#3.2-Configure-single-&amp;-multiple-ipv4-and-ipv6-addresses-simultaneously-with-an-aggregate-link-between-DUT-and-TGEN-and-verify-whether-the-interface-is-upstate-or-not." data-toc-modified-id="3.2-Configure-single-&amp;-multiple-ipv4-and-ipv6-addresses-simultaneously-with-an-aggregate-link-between-DUT-and-TGEN-and-verify-whether-the-interface-is-upstate-or-not.-1.3.2">3.2 Configure single &amp; multiple ipv4 and ipv6 addresses simultaneously with an aggregate link between DUT and TGEN and verify whether the interface is upstate or not.</a></span></li><li><span><a href="#3.3-Configure-multiple-ipv4-and-ipv6-addresses-on-the-VLAN-and-LAG-interface-at-the-same-time." data-toc-modified-id="3.3-Configure-multiple-ipv4-and-ipv6-addresses-on-the-VLAN-and-LAG-interface-at-the-same-time.-1.3.3">3.3 Configure multiple ipv4 and ipv6 addresses on the VLAN and LAG interface at the same time.</a></span></li><li><span><a href="#3.4-Error-frame-processing:" data-toc-modified-id="3.4-Error-frame-processing:-1.3.4">3.4 Error frame processing:</a></span><ul class="toc-item"><li><span><a href="#3.4.1-CRC-error-frame" data-toc-modified-id="3.4.1-CRC-error-frame-1.3.4.1">3.4.1 CRC error frame</a></span></li><li><span><a href="#3.4.2-Wrong-frame-length" data-toc-modified-id="3.4.2-Wrong-frame-length-1.3.4.2">3.4.2 Wrong frame length</a></span></li><li><span><a href="#3.4.3-Layer2-and-Layer3-Message" data-toc-modified-id="3.4.3-Layer2-and-Layer3-Message-1.3.4.3">3.4.3 Layer2 and Layer3 Message</a></span></li></ul></li><li><span><a href="#3.5-Maximum-number-of-addresses-supported-by-a-single-interface" data-toc-modified-id="3.5-Maximum-number-of-addresses-supported-by-a-single-interface-1.3.5">3.5 Maximum number of addresses supported by a single interface</a></span></li><li><span><a href="#3.6-Vlan-&amp;-route-aggregation." data-toc-modified-id="3.6-Vlan-&amp;-route-aggregation.-1.3.6">3.6 Vlan &amp; route aggregation.</a></span></li><li><span><a href="#3.7-RFC2544-test" data-toc-modified-id="3.7-RFC2544-test-1.3.7">3.7 RFC2544 test</a></span><ul class="toc-item"><li><span><a href="#3.7.1-throughput/latency/packet-loss-percentage" data-toc-modified-id="3.7.1-throughput/latency/packet-loss-percentage-1.3.7.1">3.7.1 throughput/latency/packet loss percentage</a></span></li></ul></li><li><span><a href="#3.8-route-forwarding" data-toc-modified-id="3.8-route-forwarding-1.3.8">3.8 route forwarding</a></span><ul class="toc-item"><li><span><a href="#3.8.1-default-route" data-toc-modified-id="3.8.1-default-route-1.3.8.1">3.8.1 default route</a></span></li><li><span><a href="#3.8.2-direct-connecting-route" data-toc-modified-id="3.8.2-direct-connecting-route-1.3.8.2">3.8.2 direct connecting route</a></span></li><li><span><a href="#3.8.3-IPv4+IPv6-route-resource-capability" data-toc-modified-id="3.8.3-IPv4+IPv6-route-resource-capability-1.3.8.3">3.8.3 IPv4+IPv6 route resource capability</a></span></li></ul></li></ul></li><li><span><a href="#-4-BGP:-" data-toc-modified-id="-4-BGP:--1.4"> 4 BGP: </a></span><ul class="toc-item"><li><span><a href="#4.1-Neighbour-establishment-and-neighbor-stability-under-ARP-stress-test" data-toc-modified-id="4.1-Neighbour-establishment-and-neighbor-stability-under-ARP-stress-test-1.4.1">4.1 Neighbour establishment and neighbor stability under ARP stress test</a></span></li><li><span><a href="#4.2-Validate-on-multiple-neighbors-and-neighbors-flip-test" data-toc-modified-id="4.2-Validate-on-multiple-neighbors-and-neighbors-flip-test-1.4.2">4.2 Validate on multiple neighbors and neighbors flip test</a></span></li><li><span><a href="#4.3-Verify-ECMP-table-with-multiple-network-addresses" data-toc-modified-id="4.3-Verify-ECMP-table-with-multiple-network-addresses-1.4.3">4.3 Verify ECMP table with multiple network addresses</a></span></li><li><span><a href="#4.4.-BGP-convergence-speed-and-high-capacity-route-convergence-test" data-toc-modified-id="4.4.-BGP-convergence-speed-and-high-capacity-route-convergence-test-1.4.4">4.4. BGP convergence speed and high capacity route convergence test</a></span></li><li><span><a href="#4.5-route-update" data-toc-modified-id="4.5-route-update-1.4.5">4.5 route update</a></span><ul class="toc-item"><li><span><a href="#4.5.1-routing-loop-detection-and-route-dampening" data-toc-modified-id="4.5.1-routing-loop-detection-and-route-dampening-1.4.5.1">4.5.1 routing loop detection and route dampening</a></span></li><li><span><a href="#4.5.2-static-route-entry-import-and-static-route-redistribute" data-toc-modified-id="4.5.2-static-route-entry-import-and-static-route-redistribute-1.4.5.2">4.5.2 static route entry import and static route redistribute</a></span></li><li><span><a href="#4.5.3-ARP-table-updation-and-advertise-BGP-neighbors" data-toc-modified-id="4.5.3-ARP-table-updation-and-advertise-BGP-neighbors-1.4.5.3">4.5.3 ARP table updation and advertise BGP neighbors</a></span></li></ul></li><li><span><a href="#4.6-route-forwarding" data-toc-modified-id="4.6-route-forwarding-1.4.6">4.6 route forwarding</a></span><ul class="toc-item"><li><span><a href="#4.6.1-filter-a-path-with-a-prefix-and-block-the-path-to-advertise" data-toc-modified-id="4.6.1-filter-a-path-with-a-prefix-and-block-the-path-to-advertise-1.4.6.1">4.6.1 filter a path with a prefix and block the path to advertise</a></span></li><li><span><a href="#4.6.2-validation-of-ecmp-with-64-channels" data-toc-modified-id="4.6.2-validation-of-ecmp-with-64-channels-1.4.6.2">4.6.2 validation of ecmp with 64 channels</a></span></li></ul></li><li><span><a href="#4.6.BGP-community-attribute:" data-toc-modified-id="4.6.BGP-community-attribute:-1.4.7">4.6.BGP community attribute:</a></span><ul class="toc-item"><li><span><a href="#4.6.1-Validate-the-path-forwarding-with-‘no-export’-and-‘no-advertise’" data-toc-modified-id="4.6.1-Validate-the-path-forwarding-with-‘no-export’-and-‘no-advertise’-1.4.7.1">4.6.1 Validate the path forwarding with ‘no export’ and ‘no advertise’</a></span></li><li><span><a href="#4.6.2-Validate-attribute-marking-for-‘well-known’-and-‘unknown’" data-toc-modified-id="4.6.2-Validate-attribute-marking-for-‘well-known’-and-‘unknown’-1.4.7.2">4.6.2 Validate attribute marking for ‘well known’ and ‘unknown’</a></span></li></ul></li><li><span><a href="#4.7-Stress-test:" data-toc-modified-id="4.7-Stress-test:-1.4.8">4.7 Stress test:</a></span><ul class="toc-item"><li><span><a href="#4.7.1-Multipath-routing-flap-detection" data-toc-modified-id="4.7.1-Multipath-routing-flap-detection-1.4.8.1">4.7.1 Multipath routing flap detection</a></span></li><li><span><a href="#4.7.2-Stability-of-neighbors-and-BGP-ports" data-toc-modified-id="4.7.2-Stability-of-neighbors-and-BGP-ports-1.4.8.2">4.7.2 Stability of neighbors and BGP ports</a></span></li><li><span><a href="#4.7.3-Long-term-traffic-loss-test" data-toc-modified-id="4.7.3-Long-term-traffic-loss-test-1.4.8.3">4.7.3 Long-term traffic loss test</a></span></li><li><span><a href="#4.7.4-BGP-route-flap,-neighbor,-and-port-vibration" data-toc-modified-id="4.7.4-BGP-route-flap,-neighbor,-and-port-vibration-1.4.8.4">4.7.4 BGP route flap, neighbor, and port vibration</a></span></li></ul></li></ul></li><li><span><a href="#-5.-Ethernet:-" data-toc-modified-id="-5.-Ethernet:--1.5"> 5. Ethernet: </a></span><ul class="toc-item"><li><span><a href="#5.1-ARP:" data-toc-modified-id="5.1-ARP:-1.5.1">5.1 ARP:</a></span><ul class="toc-item"><li><span><a href="#5.1.1-Configure-multiple-ARP-entries-to-check-the-ARP-table-learning-capacity-and-verify-the-learning-rate." data-toc-modified-id="5.1.1-Configure-multiple-ARP-entries-to-check-the-ARP-table-learning-capacity-and-verify-the-learning-rate.-1.5.1.1">5.1.1 Configure multiple ARP entries to check the ARP table learning capacity and verify the learning rate.</a></span></li><li><span><a href="#5.1.2-Verify-ARP-entries-with-different-types-of-IP-addresses,-Ex:-class-A,-class-B,-with-zero-MAC-address-etc" data-toc-modified-id="5.1.2-Verify-ARP-entries-with-different-types-of-IP-addresses,-Ex:-class-A,-class-B,-with-zero-MAC-address-etc-1.5.1.2">5.1.2 Verify ARP entries with different types of IP addresses, Ex: class A, class B, with zero MAC address etc</a></span></li></ul></li><li><span><a href="#5.2-VLAN:" data-toc-modified-id="5.2-VLAN:-1.5.2">5.2 VLAN:</a></span><ul class="toc-item"><li><span><a href="#5.2.1-Traffic-test-address-configured-over-VLAN-interface-and-ping-verification." data-toc-modified-id="5.2.1-Traffic-test-address-configured-over-VLAN-interface-and-ping-verification.-1.5.2.1">5.2.1 Traffic test address configured over VLAN interface and ping verification.</a></span></li><li><span><a href="#5.2.2-VLAN-tagging/de-tagging-on-interface-and-VLAN-creation-and-deletion." data-toc-modified-id="5.2.2-VLAN-tagging/de-tagging-on-interface-and-VLAN-creation-and-deletion.-1.5.2.2">5.2.2 VLAN tagging/de-tagging on interface and VLAN creation and deletion.</a></span></li><li><span><a href="#5.2.3-Verify-the-number-of-secondary-addresses-that-can-be-configured-under-a-VLAN." data-toc-modified-id="5.2.3-Verify-the-number-of-secondary-addresses-that-can-be-configured-under-a-VLAN.-1.5.2.3">5.2.3 Verify the number of secondary addresses that can be configured under a VLAN.</a></span></li><li><span><a href="#5.2.4-Verify-VLAN-interface-with-different-MTU." data-toc-modified-id="5.2.4-Verify-VLAN-interface-with-different-MTU.-1.5.2.4">5.2.4 Verify VLAN interface with different MTU.</a></span></li></ul></li><li><span><a href="#5.3-FDB:" data-toc-modified-id="5.3-FDB:-1.5.3">5.3 FDB:</a></span><ul class="toc-item"><li><span><a href="#5.3.1-MAC-address-dynamic-learning,-and-deletion-via-aging-and-manual." data-toc-modified-id="5.3.1-MAC-address-dynamic-learning,-and-deletion-via-aging-and-manual.-1.5.3.1">5.3.1 MAC address dynamic learning, and deletion via aging and manual.</a></span></li><li><span><a href="#5.3.2-Automatic-deletion-of-MAC-entries-when-the-interface-shutdown" data-toc-modified-id="5.3.2-Automatic-deletion-of-MAC-entries-when-the-interface-shutdown-1.5.3.2">5.3.2 Automatic deletion of MAC entries when the interface shutdown</a></span></li><li><span><a href="#5.3.3-Static-MAC-entries-for-port-interface-and-LAG-interface." data-toc-modified-id="5.3.3-Static-MAC-entries-for-port-interface-and-LAG-interface.-1.5.3.3">5.3.3 Static MAC entries for port interface and LAG interface.</a></span></li><li><span><a href="#5.3.4-Traffic-test-to-prevent-Denial-Of-Service-(DoS)-attack" data-toc-modified-id="5.3.4-Traffic-test-to-prevent-Denial-Of-Service-(DoS)-attack-1.5.3.4">5.3.4 Traffic test to prevent Denial Of Service (DoS) attack</a></span></li></ul></li></ul></li><li><span><a href="#-6.-LLDP:-" data-toc-modified-id="-6.-LLDP:--1.6"> 6. LLDP: </a></span><ul class="toc-item"><li><span><a href="#6.1-Validate-the-LLDP-neighbors" data-toc-modified-id="6.1-Validate-the-LLDP-neighbors-1.6.1">6.1 Validate the LLDP neighbors</a></span></li></ul></li><li><span><a href="#-7.-LACP:-" data-toc-modified-id="-7.-LACP:--1.7"> 7. LACP: </a></span><ul class="toc-item"><li><span><a href="#7.1-Create-LAG-ports-and-verify-traffic-for-no-loss-between-LAG-ports" data-toc-modified-id="7.1-Create-LAG-ports-and-verify-traffic-for-no-loss-between-LAG-ports-1.7.1">7.1 Create LAG ports and verify traffic for no loss between LAG ports</a></span></li></ul></li><li><span><a href="#-8.-DHCP:-" data-toc-modified-id="-8.-DHCP:--1.8"> 8. DHCP: </a></span><ul class="toc-item"><li><span><a href="#8.1-Validation-of-DHCP-relay" data-toc-modified-id="8.1-Validation-of-DHCP-relay-1.8.1">8.1 Validation of DHCP relay</a></span></li></ul></li><li><span><a href="#-9.-sanity-tests:-" data-toc-modified-id="-9.-sanity-tests:--1.9"> 9. sanity tests: </a></span><ul class="toc-item"><li><span><a href="#9.1-To-get-the-device-software-version,-running-platform,-memory-usage,-CPU-usage,-TCP-and-UDP-packet-reception,-and-port-basic-functions" data-toc-modified-id="9.1-To-get-the-device-software-version,-running-platform,-memory-usage,-CPU-usage,-TCP-and-UDP-packet-reception,-and-port-basic-functions-1.9.1">9.1 To get the device software version, running platform, memory usage, CPU usage, TCP and UDP packet reception, and port basic functions</a></span></li><li><span><a href="#9.2-Verify-the-MAC-learning-is-proper-and-VLAN-information-is-displayed-properly." data-toc-modified-id="9.2-Verify-the-MAC-learning-is-proper-and-VLAN-information-is-displayed-properly.-1.9.2">9.2 Verify the MAC learning is proper and VLAN information is displayed properly.</a></span></li><li><span><a href="#9.3-ICMP-messages-between-VLANs-and-routing-ports.-Respective-ARP-tables-are-updated-appropriately." data-toc-modified-id="9.3-ICMP-messages-between-VLANs-and-routing-ports.-Respective-ARP-tables-are-updated-appropriately.-1.9.3">9.3 ICMP messages between VLANs and routing ports. Respective ARP tables are updated appropriately.</a></span></li><li><span><a href="#9.4-Validation-of-load-balancing-and-load-sharing-via-static-route-and-aggregated-interface-on-VLAN-interface." data-toc-modified-id="9.4-Validation-of-load-balancing-and-load-sharing-via-static-route-and-aggregated-interface-on-VLAN-interface.-1.9.4">9.4 Validation of load balancing and load sharing via static route and aggregated interface on VLAN interface.</a></span></li><li><span><a href="#9.5-Validation-of-load-balancing-via-LACP-interface." data-toc-modified-id="9.5-Validation-of-load-balancing-via-LACP-interface.-1.9.5">9.5 Validation of load balancing via LACP interface.</a></span></li></ul></li></ul></li></ul></div>
+<p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#1.-Existing-workflow" data-toc-modified-id="1.-Existing-workflow-1"><font color="red">1. Existing workflow</font></a></span><ul class="toc-item"><li><span><a href="#1.-Developing-Test-Script-and-Testbed-information" data-toc-modified-id="1.-Developing-Test-Script-and-Testbed-information-1.1">1. Developing Test Script and Testbed information</a></span></li><li><span><a href="#2.-Script-execution" data-toc-modified-id="2.-Script-execution-1.2">2. Script execution</a></span></li><li><span><a href="#3.-Capturing-Results" data-toc-modified-id="3.-Capturing-Results-1.3">3. Capturing Results</a></span></li><li><span><a href="#4.-Drawbacks" data-toc-modified-id="4.-Drawbacks-1.4">4. Drawbacks</a></span></li></ul></li><li><span><a href="#2.-New-Automation-Workflow" data-toc-modified-id="2.-New-Automation-Workflow-2"><font color="red">2. New Automation Workflow</font></a></span><ul class="toc-item"><li><span><a href="#1.-User-develops-test-suites-containing-business-logic" data-toc-modified-id="1.-User-develops-test-suites-containing-business-logic-2.1">1. User develops test suites containing business logic</a></span></li><li><span><a href="#2.-User-creates-testbed-file-and-models-in-the-format-of-yaml" data-toc-modified-id="2.-User-creates-testbed-file-and-models-in-the-format-of-yaml-2.2">2. User creates testbed file and models in the format of yaml</a></span><ul class="toc-item"><li><span><a href="#contents-of-testbed-file" data-toc-modified-id="contents-of-testbed-file-2.2.1">contents of testbed file</a></span></li><li><span><a href="#Contents-of-model-files" data-toc-modified-id="Contents-of-model-files-2.2.2">Contents of model files</a></span></li></ul></li><li><span><a href="#3.-Generic-framework" data-toc-modified-id="3.-Generic-framework-2.3">3. Generic framework</a></span></li><li><span><a href="#4.-Test-suite-execution" data-toc-modified-id="4.-Test-suite-execution-2.4">4. Test suite execution</a></span></li><li><span><a href="#5.-Capturing-test-results" data-toc-modified-id="5.-Capturing-test-results-2.5">5. Capturing test results</a></span></li></ul></li><li><span><a href="#3.-Test-Coverage-Details-and-Description-on-Script-Level" data-toc-modified-id="3.-Test-Coverage-Details-and-Description-on-Script-Level-3"><font color="red">3. Test Coverage Details and Description on Script Level</font></a></span></li></ul></div>
 </div>
 </div>
 </div>
@@ -14618,27 +14591,222 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align=center> Test Scenarios </h2><p><h3 align=center> 1. Ipv4: </h3></p>
-<h4 align=left> 1.1 Pressure Test: ARP request/reply/free ARP </h4>
-<h4 align=left> 1.2 Error frame processing </h4>
-<h4 align=left> 1.3 Configure single/multiple ipv4 addresses when the interface state is down/up and verify the configured IP address if reflecting </h4>
-<h4 align=left> 1.4 Static routing </h4><p><h3 align=center> 2 Ipv6: </h3>
-<br></p>
-<h4 id="2.1-Verify-reception-of-packets-of-various-sizes-with-ipv6-address.">2.1 Verify reception of packets of various sizes with ipv6 address.<a class="anchor-link" href="#2.1-Verify-reception-of-packets-of-various-sizes-with-ipv6-address.">&#182;</a></h4><h4 id="2.2-Verify-packet-reception-with-HopLimit-of-0-and-1.-If-it-is-forwarding,-as-long-as-the-HopLimit-is-0-or-1,-it-cannot-be-forwarded.">2.2 Verify packet reception with HopLimit of 0 and 1. If it is forwarding, as long as the HopLimit is 0 or 1, it cannot be forwarded.<a class="anchor-link" href="#2.2-Verify-packet-reception-with-HopLimit-of-0-and-1.-If-it-is-forwarding,-as-long-as-the-HopLimit-is-0-or-1,-it-cannot-be-forwarded.">&#182;</a></h4><h4 id="2.3-Configure-the-ipv6-address-on-the-Layer-3-port-in-the-up/down-state">2.3 Configure the ipv6 address on the Layer 3 port in the up/down state<a class="anchor-link" href="#2.3-Configure-the-ipv6-address-on-the-Layer-3-port-in-the-up/down-state">&#182;</a></h4><h4 id="2.4-Configure-8-bit,-16-bit,-24-bit,-26-bit,-31-bit-ipv6-addresses-on-the-Layer-3-port-in-the-upstate.">2.4 Configure 8-bit, 16-bit, 24-bit, 26-bit, 31-bit ipv6 addresses on the Layer 3 port in the upstate.<a class="anchor-link" href="#2.4-Configure-8-bit,-16-bit,-24-bit,-26-bit,-31-bit-ipv6-addresses-on-the-Layer-3-port-in-the-upstate.">&#182;</a></h4><h4 id="2.5-aggregation-port">2.5 aggregation port<a class="anchor-link" href="#2.5-aggregation-port">&#182;</a></h4><h4 id="2.6-packet-tx-when-dest-is-a-local-host">2.6 packet tx when dest is a local host<a class="anchor-link" href="#2.6-packet-tx-when-dest-is-a-local-host">&#182;</a></h4><h4 id="2.7-Neighbour-Discovery:">2.7 Neighbour Discovery:<a class="anchor-link" href="#2.7-Neighbour-Discovery:">&#182;</a></h4><h5 id="2.7.1-64-bit-nd-converting-route">2.7.1 64-bit nd converting route<a class="anchor-link" href="#2.7.1-64-bit-nd-converting-route">&#182;</a></h5><h5 id="2.7.2-on-a-single-interface">2.7.2 on a single interface<a class="anchor-link" href="#2.7.2-on-a-single-interface">&#182;</a></h5><h5 id="2.7.3-discovery-globally">2.7.3 discovery globally<a class="anchor-link" href="#2.7.3-discovery-globally">&#182;</a></h5><h5 id="2.7.4-ND-table-items-aging-and-delete">2.7.4 ND table items aging and delete<a class="anchor-link" href="#2.7.4-ND-table-items-aging-and-delete">&#182;</a></h5><h5 id="2.7.5-ND-table-capacity-and-the-learning-speed-test">2.7.5 ND table capacity and the learning speed test<a class="anchor-link" href="#2.7.5-ND-table-capacity-and-the-learning-speed-test">&#182;</a></h5><h5 id="2.7.6-resource-capability-test">2.7.6 resource capability test<a class="anchor-link" href="#2.7.6-resource-capability-test">&#182;</a></h5><h4 id="2.8-source-address-selection:">2.8 source address selection:<a class="anchor-link" href="#2.8-source-address-selection:">&#182;</a></h4><h5 id="2.8.1-specify-source-address-in-an-application">2.8.1 specify source address in an application<a class="anchor-link" href="#2.8.1-specify-source-address-in-an-application">&#182;</a></h5><h5 id="2.8.2-When-the-source-address-is-not-specified,-the-source-address-with-the-longest-matching">2.8.2 When the source address is not specified, the source address with the longest matching<a class="anchor-link" href="#2.8.2-When-the-source-address-is-not-specified,-the-source-address-with-the-longest-matching">&#182;</a></h5><h5 id="2.8.3-prefix-on-the-interface-is-selected-according-to-the-destination-address">2.8.3 prefix on the interface is selected according to the destination address<a class="anchor-link" href="#2.8.3-prefix-on-the-interface-is-selected-according-to-the-destination-address">&#182;</a></h5><h5 id="2.8.4-Active-TX,-reply,-trigger-error-message,-also-in-line-with-the-longest-matching-principle">2.8.4 Active TX, reply, trigger error message, also in line with the longest matching principle<a class="anchor-link" href="#2.8.4-Active-TX,-reply,-trigger-error-message,-also-in-line-with-the-longest-matching-principle">&#182;</a></h5><h5 id="2.8.5-anycast-address-cannot-be-the-source-address">2.8.5 anycast address cannot be the source address<a class="anchor-link" href="#2.8.5-anycast-address-cannot-be-the-source-address">&#182;</a></h5><h4 id="2.9-static-route">2.9 static route<a class="anchor-link" href="#2.9-static-route">&#182;</a></h4><h5 id="2.9.1-The-difference-between-applying-configuration-before-receiving-routes-and-after-receiving-routes">2.9.1 The difference between applying configuration before receiving routes and after receiving routes<a class="anchor-link" href="#2.9.1-The-difference-between-applying-configuration-before-receiving-routes-and-after-receiving-routes">&#182;</a></h5><h5 id="2.9.2-Delete-the-table-item-when-the-traffic-hit">2.9.2 Delete the table item when the traffic hit<a class="anchor-link" href="#2.9.2-Delete-the-table-item-when-the-traffic-hit">&#182;</a></h5><h5 id="2.9.3-Support-configuration-of-description,-tag-(for-routing-policy-matching),-and-distance-protocol-metrics-(for-priority-comparison-of-different-routing-protocols)">2.9.3 Support configuration of description, tag (for routing policy matching), and distance protocol metrics (for priority comparison of different routing protocols)<a class="anchor-link" href="#2.9.3-Support-configuration-of-description,-tag-(for-routing-policy-matching),-and-distance-protocol-metrics-(for-priority-comparison-of-different-routing-protocols)">&#182;</a></h5><h5 id="2.9.4-Support-to-configure-next-hop-as-a-null-interface----black-hole-routing">2.9.4 Support to configure next hop as a null interface -- black hole routing<a class="anchor-link" href="#2.9.4-Support-to-configure-next-hop-as-a-null-interface----black-hole-routing">&#182;</a></h5><h5 id="2.9.5-Support-the-longest-matching">2.9.5 Support the longest matching<a class="anchor-link" href="#2.9.5-Support-the-longest-matching">&#182;</a></h5><h5 id="2.9.6-Verify-large-traffic-forwarding,-address-resolution-and-protocol-message-sending-and-receiving">2.9.6 Verify large traffic forwarding, address resolution and protocol message sending and receiving<a class="anchor-link" href="#2.9.6-Verify-large-traffic-forwarding,-address-resolution-and-protocol-message-sending-and-receiving">&#182;</a></h5><p><h3 align=center> 3. Dual-Stack: </h3>
-<br></p>
-<h4 id="3.1-Configure-ipv4-and-ipv6-addresses-between-DUT-and-TGEN-and-verify-whether-the-interface-is-upstate-or-not.">3.1 Configure ipv4 and ipv6 addresses between DUT and TGEN and verify whether the interface is upstate or not.<a class="anchor-link" href="#3.1-Configure-ipv4-and-ipv6-addresses-between-DUT-and-TGEN-and-verify-whether-the-interface-is-upstate-or-not.">&#182;</a></h4><h4 id="3.2-Configure-single-&amp;-multiple-ipv4-and-ipv6-addresses-simultaneously-with-an-aggregate-link-between-DUT-and-TGEN-and-verify-whether-the-interface-is-upstate-or-not.">3.2 Configure single &amp; multiple ipv4 and ipv6 addresses simultaneously with an aggregate link between DUT and TGEN and verify whether the interface is upstate or not.<a class="anchor-link" href="#3.2-Configure-single-&amp;-multiple-ipv4-and-ipv6-addresses-simultaneously-with-an-aggregate-link-between-DUT-and-TGEN-and-verify-whether-the-interface-is-upstate-or-not.">&#182;</a></h4><h4 id="3.3-Configure-multiple-ipv4-and-ipv6-addresses-on-the-VLAN-and-LAG-interface-at-the-same-time.">3.3 Configure multiple ipv4 and ipv6 addresses on the VLAN and LAG interface at the same time.<a class="anchor-link" href="#3.3-Configure-multiple-ipv4-and-ipv6-addresses-on-the-VLAN-and-LAG-interface-at-the-same-time.">&#182;</a></h4><h4 id="3.4-Error-frame-processing:">3.4 Error frame processing:<a class="anchor-link" href="#3.4-Error-frame-processing:">&#182;</a></h4><h5 id="3.4.1-CRC-error-frame">3.4.1 CRC error frame<a class="anchor-link" href="#3.4.1-CRC-error-frame">&#182;</a></h5><h5 id="3.4.2-Wrong-frame-length">3.4.2 Wrong frame length<a class="anchor-link" href="#3.4.2-Wrong-frame-length">&#182;</a></h5><h5 id="3.4.3-Layer2-and-Layer3-Message">3.4.3 Layer2 and Layer3 Message<a class="anchor-link" href="#3.4.3-Layer2-and-Layer3-Message">&#182;</a></h5><h4 id="3.5-Maximum-number-of-addresses-supported-by-a-single-interface">3.5 Maximum number of addresses supported by a single interface<a class="anchor-link" href="#3.5-Maximum-number-of-addresses-supported-by-a-single-interface">&#182;</a></h4><h4 id="3.6-Vlan-&amp;-route-aggregation.">3.6 Vlan &amp; route aggregation.<a class="anchor-link" href="#3.6-Vlan-&amp;-route-aggregation.">&#182;</a></h4><h4 id="3.7-RFC2544-test">3.7 RFC2544 test<a class="anchor-link" href="#3.7-RFC2544-test">&#182;</a></h4><h5 id="3.7.1-throughput/latency/packet-loss-percentage">3.7.1 throughput/latency/packet loss percentage<a class="anchor-link" href="#3.7.1-throughput/latency/packet-loss-percentage">&#182;</a></h5><h4 id="3.8-route-forwarding">3.8 route forwarding<a class="anchor-link" href="#3.8-route-forwarding">&#182;</a></h4><h5 id="3.8.1-default-route">3.8.1 default route<a class="anchor-link" href="#3.8.1-default-route">&#182;</a></h5><h5 id="3.8.2-direct-connecting-route">3.8.2 direct connecting route<a class="anchor-link" href="#3.8.2-direct-connecting-route">&#182;</a></h5><h5 id="3.8.3-IPv4+IPv6-route-resource-capability">3.8.3 IPv4+IPv6 route resource capability<a class="anchor-link" href="#3.8.3-IPv4+IPv6-route-resource-capability">&#182;</a></h5><p><h3 align=center> 4 BGP: </h3>
-<br></p>
-<h4 id="4.1-Neighbour-establishment-and-neighbor-stability-under-ARP-stress-test">4.1 Neighbour establishment and neighbor stability under ARP stress test<a class="anchor-link" href="#4.1-Neighbour-establishment-and-neighbor-stability-under-ARP-stress-test">&#182;</a></h4><h4 id="4.2-Validate-on-multiple-neighbors-and-neighbors-flip-test">4.2 Validate on multiple neighbors and neighbors flip test<a class="anchor-link" href="#4.2-Validate-on-multiple-neighbors-and-neighbors-flip-test">&#182;</a></h4><h4 id="4.3-Verify-ECMP-table-with-multiple-network-addresses">4.3 Verify ECMP table with multiple network addresses<a class="anchor-link" href="#4.3-Verify-ECMP-table-with-multiple-network-addresses">&#182;</a></h4><h4 id="4.4.-BGP-convergence-speed-and-high-capacity-route-convergence-test">4.4. BGP convergence speed and high capacity route convergence test<a class="anchor-link" href="#4.4.-BGP-convergence-speed-and-high-capacity-route-convergence-test">&#182;</a></h4><h4 id="4.5-route-update">4.5 route update<a class="anchor-link" href="#4.5-route-update">&#182;</a></h4><h5 id="4.5.1-routing-loop-detection-and-route-dampening">4.5.1 routing loop detection and route dampening<a class="anchor-link" href="#4.5.1-routing-loop-detection-and-route-dampening">&#182;</a></h5><h5 id="4.5.2-static-route-entry-import-and-static-route-redistribute">4.5.2 static route entry import and static route redistribute<a class="anchor-link" href="#4.5.2-static-route-entry-import-and-static-route-redistribute">&#182;</a></h5><h5 id="4.5.3-ARP-table-updation-and-advertise-BGP-neighbors">4.5.3 ARP table updation and advertise BGP neighbors<a class="anchor-link" href="#4.5.3-ARP-table-updation-and-advertise-BGP-neighbors">&#182;</a></h5><h4 id="4.6-route-forwarding">4.6 route forwarding<a class="anchor-link" href="#4.6-route-forwarding">&#182;</a></h4><h5 id="4.6.1-filter-a-path-with-a-prefix-and-block-the-path-to-advertise">4.6.1 filter a path with a prefix and block the path to advertise<a class="anchor-link" href="#4.6.1-filter-a-path-with-a-prefix-and-block-the-path-to-advertise">&#182;</a></h5><h5 id="4.6.2-validation-of-ecmp-with-64-channels">4.6.2 validation of ecmp with 64 channels<a class="anchor-link" href="#4.6.2-validation-of-ecmp-with-64-channels">&#182;</a></h5><h4 id="4.6.BGP-community-attribute:">4.6.BGP community attribute:<a class="anchor-link" href="#4.6.BGP-community-attribute:">&#182;</a></h4><h5 id="4.6.1-Validate-the-path-forwarding-with-%E2%80%98no-export%E2%80%99-and-%E2%80%98no-advertise%E2%80%99">4.6.1 Validate the path forwarding with &#8216;no export&#8217; and &#8216;no advertise&#8217;<a class="anchor-link" href="#4.6.1-Validate-the-path-forwarding-with-%E2%80%98no-export%E2%80%99-and-%E2%80%98no-advertise%E2%80%99">&#182;</a></h5><h5 id="4.6.2-Validate-attribute-marking-for-%E2%80%98well-known%E2%80%99-and-%E2%80%98unknown%E2%80%99">4.6.2 Validate attribute marking for &#8216;well known&#8217; and &#8216;unknown&#8217;<a class="anchor-link" href="#4.6.2-Validate-attribute-marking-for-%E2%80%98well-known%E2%80%99-and-%E2%80%98unknown%E2%80%99">&#182;</a></h5><h4 id="4.7-Stress-test:">4.7 Stress test:<a class="anchor-link" href="#4.7-Stress-test:">&#182;</a></h4><h5 id="4.7.1-Multipath-routing-flap-detection">4.7.1 Multipath routing flap detection<a class="anchor-link" href="#4.7.1-Multipath-routing-flap-detection">&#182;</a></h5><h5 id="4.7.2-Stability-of-neighbors-and-BGP-ports">4.7.2 Stability of neighbors and BGP ports<a class="anchor-link" href="#4.7.2-Stability-of-neighbors-and-BGP-ports">&#182;</a></h5><h5 id="4.7.3-Long-term-traffic-loss-test">4.7.3 Long-term traffic loss test<a class="anchor-link" href="#4.7.3-Long-term-traffic-loss-test">&#182;</a></h5><h5 id="4.7.4-BGP-route-flap,-neighbor,-and-port-vibration">4.7.4 BGP route flap, neighbor, and port vibration<a class="anchor-link" href="#4.7.4-BGP-route-flap,-neighbor,-and-port-vibration">&#182;</a></h5><p><h3 align=center> 5. Ethernet: </h3>
-<br></p>
-<h4 id="5.1-ARP:">5.1 ARP:<a class="anchor-link" href="#5.1-ARP:">&#182;</a></h4><h5 id="5.1.1-Configure-multiple-ARP-entries-to-check-the-ARP-table-learning-capacity-and-verify-the-learning-rate.">5.1.1 Configure multiple ARP entries to check the ARP table learning capacity and verify the learning rate.<a class="anchor-link" href="#5.1.1-Configure-multiple-ARP-entries-to-check-the-ARP-table-learning-capacity-and-verify-the-learning-rate.">&#182;</a></h5><h5 id="5.1.2-Verify-ARP-entries-with-different-types-of-IP-addresses,-Ex:-class-A,-class-B,-with-zero-MAC-address-etc">5.1.2 Verify ARP entries with different types of IP addresses, Ex: class A, class B, with zero MAC address etc<a class="anchor-link" href="#5.1.2-Verify-ARP-entries-with-different-types-of-IP-addresses,-Ex:-class-A,-class-B,-with-zero-MAC-address-etc">&#182;</a></h5><h4 id="5.2-VLAN:">5.2 VLAN:<a class="anchor-link" href="#5.2-VLAN:">&#182;</a></h4><h5 id="5.2.1-Traffic-test-address-configured-over-VLAN-interface-and-ping-verification.">5.2.1 Traffic test address configured over VLAN interface and ping verification.<a class="anchor-link" href="#5.2.1-Traffic-test-address-configured-over-VLAN-interface-and-ping-verification.">&#182;</a></h5><h5 id="5.2.2-VLAN-tagging/de-tagging-on-interface-and-VLAN-creation-and-deletion.">5.2.2 VLAN tagging/de-tagging on interface and VLAN creation and deletion.<a class="anchor-link" href="#5.2.2-VLAN-tagging/de-tagging-on-interface-and-VLAN-creation-and-deletion.">&#182;</a></h5><h5 id="5.2.3-Verify-the-number-of-secondary-addresses-that-can-be-configured-under-a-VLAN.">5.2.3 Verify the number of secondary addresses that can be configured under a VLAN.<a class="anchor-link" href="#5.2.3-Verify-the-number-of-secondary-addresses-that-can-be-configured-under-a-VLAN.">&#182;</a></h5><h5 id="5.2.4-Verify-VLAN-interface-with-different-MTU.">5.2.4 Verify VLAN interface with different MTU.<a class="anchor-link" href="#5.2.4-Verify-VLAN-interface-with-different-MTU.">&#182;</a></h5><h4 id="5.3-FDB:">5.3 FDB:<a class="anchor-link" href="#5.3-FDB:">&#182;</a></h4><h5 id="5.3.1-MAC-address-dynamic-learning,-and-deletion-via-aging-and-manual.">5.3.1 MAC address dynamic learning, and deletion via aging and manual.<a class="anchor-link" href="#5.3.1-MAC-address-dynamic-learning,-and-deletion-via-aging-and-manual.">&#182;</a></h5><h5 id="5.3.2-Automatic-deletion-of-MAC-entries-when-the-interface-shutdown">5.3.2 Automatic deletion of MAC entries when the interface shutdown<a class="anchor-link" href="#5.3.2-Automatic-deletion-of-MAC-entries-when-the-interface-shutdown">&#182;</a></h5><h5 id="5.3.3-Static-MAC-entries-for-port-interface-and-LAG-interface.">5.3.3 Static MAC entries for port interface and LAG interface.<a class="anchor-link" href="#5.3.3-Static-MAC-entries-for-port-interface-and-LAG-interface.">&#182;</a></h5><h5 id="5.3.4-Traffic-test-to-prevent-Denial-Of-Service-(DoS)-attack">5.3.4 Traffic test to prevent Denial Of Service (DoS) attack<a class="anchor-link" href="#5.3.4-Traffic-test-to-prevent-Denial-Of-Service-(DoS)-attack">&#182;</a></h5><p><h3 align=center> 6. LLDP: </h3>
-<br></p>
-<h4 id="6.1-Validate-the-LLDP-neighbors">6.1 Validate the LLDP neighbors<a class="anchor-link" href="#6.1-Validate-the-LLDP-neighbors">&#182;</a></h4><p><h3 align=center> 7. LACP: </h3>
-<br></p>
-<h4 id="7.1-Create-LAG-ports-and-verify-traffic-for-no-loss-between-LAG-ports">7.1 Create LAG ports and verify traffic for no loss between LAG ports<a class="anchor-link" href="#7.1-Create-LAG-ports-and-verify-traffic-for-no-loss-between-LAG-ports">&#182;</a></h4><p><h3 align=center> 8. DHCP: </h3>
-<br></p>
-<h4 id="8.1-Validation-of-DHCP-relay">8.1 Validation of DHCP relay<a class="anchor-link" href="#8.1-Validation-of-DHCP-relay">&#182;</a></h4><p><h3 align=center> 9. sanity tests: </h3>
-<br></p>
-<h4 id="9.1-To-get-the-device-software-version,-running-platform,-memory-usage,-CPU-usage,-TCP-and-UDP-packet-reception,-and-port-basic-functions">9.1 To get the device software version, running platform, memory usage, CPU usage, TCP and UDP packet reception, and port basic functions<a class="anchor-link" href="#9.1-To-get-the-device-software-version,-running-platform,-memory-usage,-CPU-usage,-TCP-and-UDP-packet-reception,-and-port-basic-functions">&#182;</a></h4><h4 id="9.2-Verify-the-MAC-learning-is-proper-and-VLAN-information-is-displayed-properly.">9.2 Verify the MAC learning is proper and VLAN information is displayed properly.<a class="anchor-link" href="#9.2-Verify-the-MAC-learning-is-proper-and-VLAN-information-is-displayed-properly.">&#182;</a></h4><h4 id="9.3-ICMP-messages-between-VLANs-and-routing-ports.-Respective-ARP-tables-are-updated-appropriately.">9.3 ICMP messages between VLANs and routing ports. Respective ARP tables are updated appropriately.<a class="anchor-link" href="#9.3-ICMP-messages-between-VLANs-and-routing-ports.-Respective-ARP-tables-are-updated-appropriately.">&#182;</a></h4><h4 id="9.4-Validation-of-load-balancing-and-load-sharing-via-static-route-and-aggregated-interface-on-VLAN-interface.">9.4 Validation of load balancing and load sharing via static route and aggregated interface on VLAN interface.<a class="anchor-link" href="#9.4-Validation-of-load-balancing-and-load-sharing-via-static-route-and-aggregated-interface-on-VLAN-interface.">&#182;</a></h4><h4 id="9.5-Validation-of-load-balancing-via-LACP-interface.">9.5 Validation of load balancing via LACP interface.<a class="anchor-link" href="#9.5-Validation-of-load-balancing-via-LACP-interface.">&#182;</a></h4>
+<h2 id="1.-Existing-workflow"><font color="red">1. Existing workflow</font><a class="anchor-link" href="#1.-Existing-workflow">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://srsettur.github.io/IxSuiteStore_helper/Sonic_framework.JPG" width="500" height="340" align="left"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="1.-Developing-Test-Script-and-Testbed-information">1. Developing Test Script and Testbed information<a class="anchor-link" href="#1.-Developing-Test-Script-and-Testbed-information">&#182;</a></h3><p>The user develops the scripts and define the testbed information in ansible file system. Testbed information contains,</p>
+<ul>
+<li>IXIA traffic generator</li>
+<li>Devices that are running with Sonic software image</li>
+<li>Port details that are connected with Ixia traffic generator and devices</li>
+<li>VLAN information</li>
+</ul>
+<h3 id="2.-Script-execution">2. Script execution<a class="anchor-link" href="#2.-Script-execution">&#182;</a></h3><p>The provided business logic under the user script, gets executed based on the provided infrastructure under testbed information.</p>
+<h3 id="3.-Capturing-Results">3. Capturing Results<a class="anchor-link" href="#3.-Capturing-Results">&#182;</a></h3><p>During execution, IXIA traffic generator connects with the specified devices and the specific business logic is performed.
+User will be provided PASS/FAIL status after the execution is completed.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="4.-Drawbacks">4. Drawbacks<a class="anchor-link" href="#4.-Drawbacks">&#182;</a></h3><ul>
+<li>For every customer scripts need to re-modeled/re-structured according to the test env. Which is time consuming and needs more efforts.</li>
+<li>Need to install the test env for validation of the scripts.</li>
+<li>We need to ask customer to validate in their env since dependency on the customer test env.</li>
+<li>For multi-DUT testing, again the scripts needs to be modified.</li>
+<li>no proper format of logs and logging is difficult. By default logs will not be stored.</li>
+</ul>
+<p>As the user script is tightly coupled with Sonic CLI and testbed information provided. This makes the user script to gets changed whenever there is a change in CLI or if the same script is to be ported to another vendor other than Sonic supported vendor</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="2.-New-Automation-Workflow"><font color="red">2. New Automation Workflow</font><a class="anchor-link" href="#2.-New-Automation-Workflow">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://srsettur.github.io/IxSuiteStore_helper/NewAutomationFramwork.JPG" width="500" height="340" align="left"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="1.-User-develops-test-suites-containing-business-logic">1. User develops test suites containing business logic<a class="anchor-link" href="#1.-User-develops-test-suites-containing-business-logic">&#182;</a></h3><h3 id="2.-User-creates-testbed-file-and-models-in-the-format-of-yaml">2. User creates testbed file and models in the format of yaml<a class="anchor-link" href="#2.-User-creates-testbed-file-and-models-in-the-format-of-yaml">&#182;</a></h3><h4 id="contents-of-testbed-file">contents of testbed file<a class="anchor-link" href="#contents-of-testbed-file">&#182;</a></h4><ul>
+<li>IXIA API server details</li>
+<li>Chassis to device interconnection details</li>
+<li>Device to device interconnection details</li>
+<li>Username and password for devices to provide ssh login</li>
+<li>type of device (such as Cisco, Juniper, Sonic etc)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><em>Testbed file with IXIA configuration</em>
+<br>
+<img src="https://srsettur.github.io/IxSuiteStore_helper/Testbed_IXIA_config.JPG" width="300" height="300" align="left"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><em>Testbed file with DUT configuration</em>
+<br>
+<img src="https://srsettur.github.io/IxSuiteStore_helper/Testbed_DUT_config.JPG" width="300" height="300" align="left"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Contents-of-model-files">Contents of model files<a class="anchor-link" href="#Contents-of-model-files">&#182;</a></h4><ul>
+<li>CLI commands that are mapped to API specified</li>
+<li>The required command mode to perform the CLI</li>
+<li>Pattern of different command modes</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><em>Sample model file written in yaml</em>
+<br>
+<img src="https://srsettur.github.io/IxSuiteStore_helper/Sample_model_File.JPG" width="500" height="300" align="left"></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="3.-Generic-framework">3. Generic framework<a class="anchor-link" href="#3.-Generic-framework">&#182;</a></h3><p>The new automation framework, maps the APIs under the test script, with the models and returns the CLI that needs to be executed.</p>
+<h3 id="4.-Test-suite-execution">4. Test suite execution<a class="anchor-link" href="#4.-Test-suite-execution">&#182;</a></h3><p>The framework is also responsible creating/managing connections with IXIA traffic generator and also with the specified devices.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="5.-Capturing-test-results">5. Capturing test results<a class="anchor-link" href="#5.-Capturing-test-results">&#182;</a></h3><ul>
+<li>The test logs are available under 'Results' tab in IxStoreStore</li>
+<li>Status(PASS/FAIL) of the test will also be visible to the user in IxStoreStore</li>
+</ul>
+<p>User scripts are separated from framework, this gives freedom to user to migrate the same testcase for different vendor specific devices running with any other software images like Cisco IOS, JunOS etc. By default Sonic community CLI is supported</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="3.-Test-Coverage-Details-and-Description-on-Script-Level"><font color="red">3. Test Coverage Details and Description on Script Level</font><a class="anchor-link" href="#3.-Test-Coverage-Details-and-Description-on-Script-Level">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://srsettur.github.io/IxSuiteStore_helper/TestScenarioCoverage.html">Please find the scenario coverage details </a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://srsettur.github.io/IxSuiteStore_helper/TestCaseDescription.html">Script wise Description</a></p>
+
 </div>
 </div>
 </div>
@@ -14665,10 +14833,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {}, "version_major": 2, "version_minor": 0}
-</script>
 
 
 </html>
